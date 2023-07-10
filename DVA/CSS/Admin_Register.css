@@ -1,0 +1,115 @@
+@import url('Fonts.css');
+
+.fill {
+    padding-left: 365px;
+    padding-top: 20px;
+    width: 1000px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.register {
+    cursor: pointer;
+    width: 1000px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    border: 1px solid #233754;
+    background: #DFF0FF;
+    display: flex;
+    align-items: center;
+}
+
+.details {
+    margin-left: 20px;
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.text {
+    color: #233754;
+    font-size: 14px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.divider {
+    width: 1px;
+    height: 16px;
+    background: #233754;
+    margin-top: 15px;
+}
+
+.teamlogo {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    border-radius: 5000px;
+    margin-top: 12px;
+}
+
+.decision {
+    margin-left: 420px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.decline {
+    width: 120px;
+    height: 16px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    border: 0.4px solid #030E20;
+    background: #E86363;
+}
+
+.accept {
+    width: 120px;
+    height: 16px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    border: 0.4px solid #030E20;
+    background: #66E863;
+}
+
+.decisiontext {
+    margin-top: -1px;
+    color: #000;
+    text-align: center;
+    font-family: 'Bahianita';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.2px;
+}
+
+.add {
+    cursor: pointer;
+    width: 100%;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: #436495;
+    display: flex;
+    justify-content: center;
+    border: none;
+    align-items: center
+}
+
+.addtext {
+    color: #EAF5FF;
+    font-family: 'Inter';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
