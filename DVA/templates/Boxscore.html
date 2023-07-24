@@ -1,55 +1,53 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'CSS/Common.css' %}">
-    <link rel="stylesheet" href="{% static 'CSS/Stats2.css' %}">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="{% static 'CSS/Common.css' %}">
+      <link rel="stylesheet" href="{% static 'CSS/Stats2.css' %}">
       <title>Schedule</title>
-
       <div class="header">
-        <div style="margin-right: 60px;">
+         <div style="margin-right: 60px;">
             <a class="headertext" href="{% url 'schedule' %}">SCHEDULE</a>
             <div class="headerdivider"></div>
-           <a class="headertext" href="{% url 'teams' %}">TEAMS</a>
-           <div class="headerdivider"></div>
-           <a class="headertext" href="{% url 'stats' %}">STATS</a>
-           <div class="headerdivider"></div>
-           <a class="headertext" href="{% url 'register' %}">REGISTER</a>
-           <div class="headerdivider"></div>
-           <a class="headertext" href="{% url 'about' %}">ABOUT</a>
-        </div>
-     </div>
-
+            <a class="headertext" href="{% url 'teams' %}">TEAMS</a>
+            <div class="headerdivider"></div>
+            <a class="headertext" href="{% url 'stats' %}">STATS</a>
+            <div class="headerdivider"></div>
+            <a class="headertext" href="{% url 'register' %}">REGISTER</a>
+            <div class="headerdivider"></div>
+            <a class="headertext" href="{% url 'about' %}">ABOUT</a>
+         </div>
+      </div>
    </head>
    <body>
       <div class="heading">
-        <p class="titlefont">BOXSCORE</p>
+         <p class="titlefont">BOXSCORE</p>
       </div>
       <table>
-        <tr class="top">
-          <th class="tag">#</th>
-          <th></th>
-          <th class="name">Al Mawakeb Al Barsha</th>
-          <th class="stat">FG</th>
-          <th class="stat">FG%</th>
-          <th class="stat">3PT</th>
-          <th class="stat">3PT%</th>
-          <th class="stat">FT</th>
-          <th class="stat">FT%</th>
-          <th class="stat">RBD</th>
-          <th class="stat">AST</th>
-          <th class="stat">STL</th>
-          <th class="stat">BLK</th>
-          <th class="stat">TOVS</th>
-          <th class="stat">PTS</th>
-        </tr>
-        <tr>
+         <tr class="top">
+            <th class="tag">#</th>
+            <th></th>
+            <th class="name">Al Mawakeb Al Barsha</th>
+            <th class="stat">FG</th>
+            <th class="stat">FG%</th>
+            <th class="stat">3PT</th>
+            <th class="stat">3PT%</th>
+            <th class="stat">FT</th>
+            <th class="stat">FT%</th>
+            <th class="stat">RBD</th>
+            <th class="stat">AST</th>
+            <th class="stat">STL</th>
+            <th class="stat">BLK</th>
+            <th class="stat">TOVS</th>
+            <th class="stat">PTS</th>
+         </tr>
+         <tr>
             <td class="rank">1</td>
-            <td class="mw"><img class="mascot" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/mascot.png" alt=""></td>
-            <td class="playername">Ahmad Abuqamar</td>          
+            <td class="mw"><img class="mascot" src="{% static '../media/images/mascot.png'%}" alt=""></td>
+            <td class="playername">Ahmad Abuqamar</td>
             <td class="games winbg">11</td>
             <td class="games">3</td>
             <td class="games winbg">11</td>
@@ -62,11 +60,11 @@
             <td class="games">3</td>
             <td class="games winbg">11</td>
             <td class="games">3</td>
-        </tr>    
-        <tr>
+         </tr>
+         <tr>
             <td class="rank">1</td>
-            <td class="mw"><img class="mascot" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/mascot.png" alt=""></td>
-            <td class="playername">Ahmad Abuqamar</td>          
+            <td class="mw"><img class="mascot" src="{% static '../media/images/mascot.png'%}" alt=""></td>
+            <td class="playername">Ahmad Abuqamar</td>
             <td class="games winbg">11</td>
             <td class="games">3</td>
             <td class="games winbg">11</td>
@@ -79,11 +77,11 @@
             <td class="games">3</td>
             <td class="games winbg">11</td>
             <td class="games">3</td>
-        </tr>    
-        <tr>
+         </tr>
+         <tr>
             <td class="rank">1</td>
-            <td class="mw"><img class="mascot" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/mascot.png" alt=""></td>
-            <td class="playername">Ahmad Abuqamar</td>          
+            <td class="mw"><img class="mascot" src="{% static '../media/images/mascot.png'%}" alt=""></td>
+            <td class="playername">Ahmad Abuqamar</td>
             <td class="games winbg">11</td>
             <td class="games">3</td>
             <td class="games winbg">11</td>
@@ -96,11 +94,11 @@
             <td class="games">3</td>
             <td class="games winbg">11</td>
             <td class="games">3</td>
-        </tr>    
-        <tr>
+         </tr>
+         <tr>
             <td class="rank">1</td>
-            <td class="mw"><img class="mascot" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/mascot.png" alt=""></td>
-            <td class="playername">Ahmad Abuqamar</td>          
+            <td class="mw"><img class="mascot" src="{% static '../media/images/mascot.png'%}" alt=""></td>
+            <td class="playername">Ahmad Abuqamar</td>
             <td class="games winbg">11</td>
             <td class="games">3</td>
             <td class="games winbg">11</td>
@@ -113,11 +111,11 @@
             <td class="games">3</td>
             <td class="games winbg">11</td>
             <td class="games">3</td>
-        </tr>    
-        <tr>
+         </tr>
+         <tr>
             <td class="rank">1</td>
-            <td class="mw"><img class="mascot" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/mascot.png" alt=""></td>
-            <td class="playername">Ahmad Abuqamar</td>          
+            <td class="mw"><img class="mascot" src="{% static '../media/images/mascot.png'%}" alt=""></td>
+            <td class="playername">Ahmad Abuqamar</td>
             <td class="games winbg">11</td>
             <td class="games">3</td>
             <td class="games winbg">11</td>
@@ -130,11 +128,11 @@
             <td class="games">3</td>
             <td class="games winbg">11</td>
             <td class="games">3</td>
-        </tr>    
-        <tr>
+         </tr>
+         <tr>
             <td class="rank">1</td>
-            <td class="mw"><img class="mascot" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/mascot.png" alt=""></td>
-            <td class="playername">Ahmad Abuqamar</td>          
+            <td class="mw"><img class="mascot" src="{% static '../media/images/mascot.png'%}" alt=""></td>
+            <td class="playername">Ahmad Abuqamar</td>
             <td class="games winbg">11</td>
             <td class="games">3</td>
             <td class="games winbg">11</td>
@@ -147,11 +145,11 @@
             <td class="games">3</td>
             <td class="games winbg">11</td>
             <td class="games">3</td>
-        </tr>    
-        <tr>
+         </tr>
+         <tr>
             <td class="rank">1</td>
-            <td class="mw"><img class="mascot" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/mascot.png" alt=""></td>
-            <td class="playername">Ahmad Abuqamar</td>          
+            <td class="mw"><img class="mascot" src="{% static '../media/images/mascot.png'%}" alt=""></td>
+            <td class="playername">Ahmad Abuqamar</td>
             <td class="games winbg">11</td>
             <td class="games">3</td>
             <td class="games winbg">11</td>
@@ -164,11 +162,11 @@
             <td class="games">3</td>
             <td class="games winbg">11</td>
             <td class="games">3</td>
-        </tr>    
-        <tr>
+         </tr>
+         <tr>
             <td class="rank">1</td>
-            <td class="mw"><img class="mascot" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/mascot.png" alt=""></td>
-            <td class="playername">Ahmad Abuqamar</td>          
+            <td class="mw"><img class="mascot" src="{% static '../media/images/mascot.png'%}" alt=""></td>
+            <td class="playername">Ahmad Abuqamar</td>
             <td class="games winbg">11</td>
             <td class="games">3</td>
             <td class="games winbg">11</td>
@@ -181,11 +179,11 @@
             <td class="games">3</td>
             <td class="games winbg">11</td>
             <td class="games">3</td>
-        </tr>    
-        <tr>
+         </tr>
+         <tr>
             <td class="rank">1</td>
-            <td class="mw"><img class="mascot" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/mascot.png" alt=""></td>
-            <td class="playername">Ahmad Abuqamar</td>          
+            <td class="mw"><img class="mascot" src="{% static '../media/images/mascot.png'%}" alt=""></td>
+            <td class="playername">Ahmad Abuqamar</td>
             <td class="games winbg">11</td>
             <td class="games">3</td>
             <td class="games winbg">11</td>
@@ -198,11 +196,11 @@
             <td class="games">3</td>
             <td class="games winbg">11</td>
             <td class="games">3</td>
-        </tr>    
-        <tr>
+         </tr>
+         <tr>
             <td class="rank">1</td>
-            <td class="mw"><img class="mascot" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/mascot.png" alt=""></td>
-            <td class="playername">Ahmad Abuqamar</td>          
+            <td class="mw"><img class="mascot" src="{% static '../media/images/mascot.png'%}" alt=""></td>
+            <td class="playername">Ahmad Abuqamar</td>
             <td class="games winbg">11</td>
             <td class="games">3</td>
             <td class="games winbg">11</td>
@@ -215,11 +213,11 @@
             <td class="games">3</td>
             <td class="games winbg">11</td>
             <td class="games">3</td>
-        </tr>    
-        <tr>
+         </tr>
+         <tr>
             <td class="rank">1</td>
-            <td class="mw"><img class="mascot" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/mascot.png" alt=""></td>
-            <td class="playername">Ahmad Abuqamar</td>          
+            <td class="mw"><img class="mascot" src="{% static '../media/images/mascot.png'%}" alt=""></td>
+            <td class="playername">Ahmad Abuqamar</td>
             <td class="games winbg">11</td>
             <td class="games">3</td>
             <td class="games winbg">11</td>
@@ -232,11 +230,11 @@
             <td class="games">3</td>
             <td class="games winbg">11</td>
             <td class="games">3</td>
-        </tr>    
-        <tr>
+         </tr>
+         <tr>
             <td class="rank">1</td>
-            <td class="mw"><img class="mascot" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/mascot.png" alt=""></td>
-            <td class="playername">Ahmad Abuqamar</td>          
+            <td class="mw"><img class="mascot" src="{% static '../media/images/mascot.png'%}" alt=""></td>
+            <td class="playername">Ahmad Abuqamar</td>
             <td class="games winbg">11</td>
             <td class="games">3</td>
             <td class="games winbg">11</td>
@@ -249,11 +247,11 @@
             <td class="games">3</td>
             <td class="games winbg">11</td>
             <td class="games">3</td>
-        </tr>    
-        <tr>
+         </tr>
+         <tr>
             <td class="rank">1</td>
-            <td class="mw"><img class="mascot" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/mascot.png" alt=""></td>
-            <td class="playername">Ahmad Abuqamar</td>          
+            <td class="mw"><img class="mascot" src="{% static '../media/images/mascot.png'%}" alt=""></td>
+            <td class="playername">Ahmad Abuqamar</td>
             <td class="games winbg">11</td>
             <td class="games">3</td>
             <td class="games winbg">11</td>
@@ -266,11 +264,11 @@
             <td class="games">3</td>
             <td class="games winbg">11</td>
             <td class="games">3</td>
-        </tr>    
-        <tr>
+         </tr>
+         <tr>
             <td class="rank">1</td>
-            <td class="mw"><img class="mascot" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/mascot.png" alt=""></td>
-            <td class="playername">Ahmad Abuqamar</td>          
+            <td class="mw"><img class="mascot" src="{% static '../media/images/mascot.png'%}" alt=""></td>
+            <td class="playername">Ahmad Abuqamar</td>
             <td class="games winbg">11</td>
             <td class="games">3</td>
             <td class="games winbg">11</td>
@@ -283,11 +281,11 @@
             <td class="games">3</td>
             <td class="games winbg">11</td>
             <td class="games">3</td>
-        </tr>    
-        <tr>
+         </tr>
+         <tr>
             <td class="rank">1</td>
-            <td class="mw"><img class="mascot" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/mascot.png" alt=""></td>
-            <td class="playername">Ahmad Abuqamar</td>          
+            <td class="mw"><img class="mascot" src="{% static '../media/images/mascot.png'%}" alt=""></td>
+            <td class="playername">Ahmad Abuqamar</td>
             <td class="games winbg">11</td>
             <td class="games">3</td>
             <td class="games winbg">11</td>
@@ -300,323 +298,324 @@
             <td class="games">3</td>
             <td class="games winbg">11</td>
             <td class="games">3</td>
-        </tr>    
+         </tr>
       </table>
-<table>
-    <tr class="top">
-      <th class="tag">#</th>
-      <th></th>
-      <th class="name">Al Mawakeb Al Barsha</th>
-      <th class="stat">FG</th>
-      <th class="stat">FG%</th>
-      <th class="stat">3PT</th>
-      <th class="stat">3PT%</th>
-      <th class="stat">FT</th>
-      <th class="stat">FT%</th>
-      <th class="stat">RBD</th>
-      <th class="stat">AST</th>
-      <th class="stat">STL</th>
-      <th class="stat">BLK</th>
-      <th class="stat">TOVS</th>
-      <th class="stat">PTS</th>
-    </tr>
-    <tr>
-        <td class="rank">1</td>
-        <td class="mw"><img class="mascot" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/mascot.png" alt=""></td>
-        <td class="playername">Ahmad Abuqamar</td>          
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-    </tr>    
-    <tr>
-        <td class="rank">1</td>
-        <td class="mw"><img class="mascot" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/mascot.png" alt=""></td>
-        <td class="playername">Ahmad Abuqamar</td>          
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-    </tr>    
-    <tr>
-        <td class="rank">1</td>
-        <td class="mw"><img class="mascot" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/mascot.png" alt=""></td>
-        <td class="playername">Ahmad Abuqamar</td>          
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-    </tr>    
-    <tr>
-        <td class="rank">1</td>
-        <td class="mw"><img class="mascot" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/mascot.png" alt=""></td>
-        <td class="playername">Ahmad Abuqamar</td>          
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-    </tr>    
-    <tr>
-        <td class="rank">1</td>
-        <td class="mw"><img class="mascot" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/mascot.png" alt=""></td>
-        <td class="playername">Ahmad Abuqamar</td>          
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-    </tr>    
-    <tr>
-        <td class="rank">1</td>
-        <td class="mw"><img class="mascot" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/mascot.png" alt=""></td>
-        <td class="playername">Ahmad Abuqamar</td>          
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-    </tr>    
-    <tr>
-        <td class="rank">1</td>
-        <td class="mw"><img class="mascot" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/mascot.png" alt=""></td>
-        <td class="playername">Ahmad Abuqamar</td>          
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-    </tr>    
-    <tr>
-        <td class="rank">1</td>
-        <td class="mw"><img class="mascot" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/mascot.png" alt=""></td>
-        <td class="playername">Ahmad Abuqamar</td>          
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-    </tr>    
-    <tr>
-        <td class="rank">1</td>
-        <td class="mw"><img class="mascot" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/mascot.png" alt=""></td>
-        <td class="playername">Ahmad Abuqamar</td>          
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-    </tr>    
-    <tr>
-        <td class="rank">1</td>
-        <td class="mw"><img class="mascot" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/mascot.png" alt=""></td>
-        <td class="playername">Ahmad Abuqamar</td>          
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-    </tr>    
-    <tr>
-        <td class="rank">1</td>
-        <td class="mw"><img class="mascot" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/mascot.png" alt=""></td>
-        <td class="playername">Ahmad Abuqamar</td>          
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-    </tr>    
-    <tr>
-        <td class="rank">1</td>
-        <td class="mw"><img class="mascot" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/mascot.png" alt=""></td>
-        <td class="playername">Ahmad Abuqamar</td>          
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-    </tr>    
-    <tr>
-        <td class="rank">1</td>
-        <td class="mw"><img class="mascot" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/mascot.png" alt=""></td>
-        <td class="playername">Ahmad Abuqamar</td>          
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-    </tr>    
-    <tr>
-        <td class="rank">1</td>
-        <td class="mw"><img class="mascot" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/mascot.png" alt=""></td>
-        <td class="playername">Ahmad Abuqamar</td>          
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-    </tr>    
-    <tr>
-        <td class="rank">1</td>
-        <td class="mw"><img class="mascot" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/mascot.png" alt=""></td>
-        <td class="playername">Ahmad Abuqamar</td>          
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-        <td class="games winbg">11</td>
-        <td class="games">3</td>
-    </tr>    
-  </table>
-
-    </body>
+      <table>
+         <tr class="top">
+            <th class="tag">#</th>
+            <th></th>
+            <th class="name">Al Mawakeb Al Barsha</th>
+            <th class="stat">FG</th>
+            <th class="stat">FG%</th>
+            <th class="stat">3PT</th>
+            <th class="stat">3PT%</th>
+            <th class="stat">FT</th>
+            <th class="stat">FT%</th>
+            <th class="stat">RBD</th>
+            <th class="stat">AST</th>
+            <th class="stat">STL</th>
+            <th class="stat">BLK</th>
+            <th class="stat">TOVS</th>
+            <th class="stat">PTS</th>
+         </tr>
+         <tr>
+            <td class="rank">1</td>
+            <td class="mw"><img class="mascot" src="{% static '../media/images/mascot.png'%}" alt=""></td>
+            <td class="playername">Ahmad Abuqamar</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+         </tr>
+         <tr>
+            <td class="rank">1</td>
+            <td class="mw"><img class="mascot" src="{% static '../media/images/mascot.png'%}" alt=""></td>
+            <td class="playername">Ahmad Abuqamar</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+         </tr>
+         <tr>
+            <td class="rank">1</td>
+            <td class="mw"><img class="mascot" src="{% static '../media/images/mascot.png'%}" alt=""></td>
+            <td class="playername">Ahmad Abuqamar</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+         </tr>
+         <tr>
+            <td class="rank">1</td>
+            <td class="mw"><img class="mascot" src="{% static '../media/images/mascot.png'%}" alt=""></td>
+            <td class="playername">Ahmad Abuqamar</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+         </tr>
+         <tr>
+            <td class="rank">1</td>
+            <td class="mw"><img class="mascot" src="{% static '../media/images/mascot.png'%}" alt=""></td>
+            <td class="playername">Ahmad Abuqamar</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+         </tr>
+         <tr>
+            <td class="rank">1</td>
+            <td class="mw"><img class="mascot" src="{% static '../media/images/mascot.png'%}" alt=""></td>
+            <td class="playername">Ahmad Abuqamar</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+         </tr>
+         <tr>
+            <td class="rank">1</td>
+            <td class="mw"><img class="mascot" src="{% static '../media/images/mascot.png'%}" alt=""></td>
+            <td class="playername">Ahmad Abuqamar</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+         </tr>
+         <tr>
+            <td class="rank">1</td>
+            <td class="mw"><img class="mascot" src="{% static '../media/images/mascot.png'%}" alt=""></td>
+            <td class="playername">Ahmad Abuqamar</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+         </tr>
+         <tr>
+            <td class="rank">1</td>
+            <td class="mw"><img class="mascot" src="{% static '../media/images/mascot.png'%}" alt=""></td>
+            <td class="playername">Ahmad Abuqamar</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+         </tr>
+         <tr>
+            <td class="rank">1</td>
+            <td class="mw"><img class="mascot" src="{% static '../media/images/mascot.png'%}" alt=""></td>
+            <td class="playername">Ahmad Abuqamar</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+         </tr>
+         <tr>
+            <td class="rank">1</td>
+            <td class="mw"><img class="mascot" src="{% static '../media/images/mascot.png'%}" alt=""></td>
+            <td class="playername">Ahmad Abuqamar</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+         </tr>
+         <tr>
+            <td class="rank">1</td>
+            <td class="mw"><img class="mascot" src="{% static '../media/images/mascot.png'%}" alt=""></td>
+            <td class="playername">Ahmad Abuqamar</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+         </tr>
+         <tr>
+            <td class="rank">1</td>
+            <td class="mw"><img class="mascot" src="{% static '../media/images/mascot.png'%}" alt=""></td>
+            <td class="playername">Ahmad Abuqamar</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+         </tr>
+         <tr>
+            <td class="rank">1</td>
+            <td class="mw"><img class="mascot" src="{% static '../media/images/mascot.png'%}" alt=""></td>
+            <td class="playername">Ahmad Abuqamar</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+         </tr>
+         <tr>
+            <td class="rank">1</td>
+            <td class="mw"><img class="mascot" src="{% static '../media/images/mascot.png'%}" alt=""></td>
+            <td class="playername">Ahmad Abuqamar</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+            <td class="games winbg">11</td>
+            <td class="games">3</td>
+         </tr>
+      </table>
+   </body>
    <footer>
-    <div class="footer">
-        <div class="About">
-            <img class="logo" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/Logo.png" alt="DVA Logo">
+      <div class="footer">
+         <div class="About">
+            <img class="logo" src="{% static '../media/images/Logo.png'%}" alt="DVA Logo">
             <h2 class="footertitle">Dubai Varsity Association</h2>
             <p class="footerabout">Fostering sports excellence in schools through dedicated leagues for volleyball, basketball, and football.</p>
-        </div>
-        <div class="Leagues">
+         </div>
+         <div class="Leagues">
             <h4 class="footersubtitle">Leagues</h4>
             <p class="footertext">Football</p>
             <p class="footertext">Volleyball</p>
             <p class="footertext">Basketball</p>
-        </div>
-        <div class="Legal">
+         </div>
+         <div class="Legal">
             <h4 class="footersubtitle">Legal</h4>
             <p class="footertext">Terms</p>
             <p class="footertext">Privacy</p>
             <p class="footertext">Handbook</p>
             <p class="footertext">Register</p>
-        </div>
-        <div class="Company">
+         </div>
+         <div class="Company">
             <h4 class="footersubtitle">Company</h4>
             <p class="footertext">About Us</p>
             <p class="footertext">Careers</p>
             <p class="footertext">FAQs</p>
             <p class="footertext">Admin</p>
-        </div>
-        <div class="Contact">
+         </div>
+         <div class="Contact">
             <h4 class="footersubtitle">Contact Us</h4>
-            <div class="Contactinner"><img class="icon" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/icon.png" alt="Location">
-            <p class="footertext">Wisconsin Ave, Suite 700 Chevy Chase, Maryland</p></div>
+            <div class="Contactinner">
+               <img class="icon" src="{% static '../media/images/icon.png'%}" alt="Location">
+               <p class="footertext">Wisconsin Ave, Suite 700 Chevy Chase, Maryland</p>
+            </div>
             <h4 class="footersubtitle">Follow Us</h4>
             <div class="Followinner">
-                <img class="icon" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/social-1.png" alt="Location">
-                <img class="icon" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/social-2.png" alt="Location">
-                <img class="icon" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/social-3.png" alt="Location">
-                <img class="icon" src="/Users/sulaimanabuqamar/Documents/Estarta/DVA/Images/social.png" alt="Location">
+               <img class="icon" src="{% static '../media/images/social-1.png'%}" alt="Location">
+               <img class="icon" src="{% static '../media/images/social-2.png'%}" alt="Location">
+               <img class="icon" src="{% static '../media/images/social-3.png'%}" alt="Location">
+               <img class="icon" src="{% static '../media/images/social.png'%}" alt="Location">
             </div>
-        </div>
-    </div>
+         </div>
+      </div>
    </footer>
 </html>
