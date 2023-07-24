@@ -1,6 +1,6 @@
-@import url('Fonts.css');
+@import url('/static/CSS/Fonts.css');
 
-table {
+  table {
     margin: 100px;
     margin-left: auto;
     margin-right: auto;

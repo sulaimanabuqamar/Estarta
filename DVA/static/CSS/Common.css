@@ -1,4 +1,6 @@
-@import url('Fonts.css');
+@import url('https://fonts.googleapis.com/css2?family=Bahianita&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300&display=swap');
 
 body {
     background: #EAF5FF;
@@ -65,7 +67,7 @@ body {
 .titlefont {
     color: #EAF5FF;
     font-size: 40px;
-    font-family: 'Bahianita', sans-serif;
+    font-family: "Bahianita", sans-serif;
     letter-spacing: 4px;
     padding: 28px;
     padding-left: 130px;

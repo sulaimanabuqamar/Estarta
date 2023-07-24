@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Bahianita&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300&display=swap');
+
 body {
     display: inline-block;
     background: #EAF5FF;
@@ -55,7 +59,7 @@ button {
     transform: translateY(-50%) rotate(180deg);
     color: #EAF5FF;
     font-size: 35px;
-    font-family: 'Bahiana';
+    font-family: 'Bahianita';
     font-style: normal;
     font-weight: 400;
     line-height: normal;
