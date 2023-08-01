@@ -17,6 +17,7 @@ urlpatterns = [
     path("admin/register/", views.adminRegister, name="admin_register"),
     path("admin/register/team/", views.adminRegister2, name="admin_register2"),
     path("admin/teams/", views.adminTeams, name="admin_teams"),
+    path("admin/teams/team", views.adminTeams2, name="admin_teams2"),
     path("admin/accounts/", views.adminAccounts, name="admin_accounts"),
     path("admin/accounts/user/", views.adminAccounts2, name="admin_accounts2"),
 ]

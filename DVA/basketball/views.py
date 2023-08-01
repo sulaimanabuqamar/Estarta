@@ -39,6 +39,9 @@ def adminRegister(request):
 def adminTeams(request):
     return render(request, "Admin_Teams.html")
 
+def adminTeams2(request):
+    return render(request, "Admin_Register2.html")
+
 def adminAccounts(request):
     return render(request, "Admin_Accounts.html")
 
