@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "basketball",
 ]
 
 MIDDLEWARE = [
@@ -129,13 +130,20 @@ STATICFILES_DIRS = [
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": "mydatabase",
+    }
+}
+
 #DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.postgresql',
 #        'NAME': 'Basketball_Division_1',
 #        'USER': 'SulaimanAQ',
 #        'PASSWORD': 'SNAQ1234',
-#        'HOST': 'localhost',
+#        'HOST': '127.0.0.1',
 #        'PORT': '8000',
 #    }
 #}

@@ -24,7 +24,7 @@
 }
 
 .form1 {
-    width: 100%;
+    width: 1060px;
     height: 30px;
     flex-shrink: 0;
     border-radius: 20px;
@@ -33,7 +33,7 @@
 }
 
 .form2 {
-    width: 100%;
+    width: 1060px;
     height: 82px;
     flex-shrink: 0;
     border-radius: 20px;
@@ -43,7 +43,8 @@
 }
 
 .form3 {
-    width: 49%;
+    padding-left: 10px;
+    width: 515px;
     height: 30px;
     flex-shrink: 0;
     border-radius: 20px;
@@ -61,12 +62,20 @@ input::placeholder {
     line-height: normal;
   }
 
+#player_age {
+    color: #233754;
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
 
 .forms1 {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    gap: 2%;
+    gap: 10px;
 }
 
 .check {

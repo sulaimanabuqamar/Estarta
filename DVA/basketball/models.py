@@ -1,3 +1,60 @@
 from django.db import models
 
-# Create your models here.
+class Team(models.Model):
+    team_id = models.CharField(max_length=15, primary_key=True)
+    team_name = models.CharField(max_length=25)
+    team_logo = models.ImageField(upload_to='team_logos/')
+    manager_fname = models.CharField(max_length=25)
+    manager_lname = models.CharField(max_length=25)
+    manager_number = models.BigIntegerField()
+    manager_email = models.EmailField(max_length=25)
+    wins = models.IntegerField()
+    loses = models.IntegerField()
+
+class Player(models.Model):
+    player_id = models.AutoField(primary_key=True)
+    player_fname = models.CharField(max_length=25)
+    player_lname = models.CharField(max_length=25)
+    player_age = models.IntegerField()
+    player_number = models.IntegerField()
+    player_email = models.EmailField(max_length=25)
+    player_image = models.ImageField(upload_to='player_images/')
+    team_id = models.ForeignKey(Team, on_delete=models.CASCADE)
+    field_goals = models.IntegerField()
+    field_goals_percentage = models.FloatField()
+    three_pointers = models.IntegerField()
+    three_pointers_percentage = models.FloatField()
+    free_throws = models.IntegerField()
+    free_throws_percentage = models.FloatField()
+    rebounds = models.IntegerField()
+    assists = models.IntegerField()
+    steals = models.IntegerField()
+    blocks = models.IntegerField()
+    turnovers = models.IntegerField()
+    points = models.IntegerField()
+
+class ScoreKeeper(models.Model):
+    keeper_id = models.AutoField(primary_key=True)
+    keeper_name = models.CharField(max_length=25)
+    keeper_number = models.BigIntegerField()
+    keeper_email = models.EmailField(max_length=25)
+    keeper_username = models.CharField(max_length=25)
+    keeper_password = models.CharField(max_length=50) 
+    game_id = models.ForeignKey('Game', on_delete=models.CASCADE)
+
+class Game(models.Model):
+    game_id = models.AutoField(primary_key=True)
+    team_1_id = models.ForeignKey(Team, related_name='team_1_games', on_delete=models.CASCADE)
+    team_2_id = models.ForeignKey(Team, related_name='team_2_games', on_delete=models.CASCADE)
+    team_1_score = models.IntegerField()
+    team_2_score = models.IntegerField()
+    game_status = models.CharField(max_length=20)
+    game_date = models.DateField()
+
+class Admin(models.Model):
+    admin_id = models.AutoField(primary_key=True)
+    admin_name = models.CharField(max_length=25)
+    admin_number = models.BigIntegerField()
+    admin_email = models.EmailField(max_length=25)
+    admin_username = models.CharField(max_length=25)
+    admin_password = models.CharField(max_length=50)
