@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .forms import RegisterationForm
 
 # Create your views here.
 
@@ -16,7 +17,13 @@ def stats(request):
     return render(request, "Stats.html")
 
 def register(request):
-    return render(request, "Register.html")
+    if request.POST:
+        form = RegisterationForm(request.POST, request.FILES)
+        print(request.FILES)
+        if form.is_valid():
+            form.save
+        return redirect(schedule)
+    return render(request, "Register.html", {'form' : RegisterationForm})
 
 def about(request):
     return render(request, "About.html")
@@ -51,26 +58,16 @@ def adminRegister2(request):
 def adminAccounts2(request):
     return render(request, "Admin_Accounts2.html")
 
-from django.http import HttpResponseRedirect
-from django.shortcuts import render
-
+from django.shortcuts import render, redirect
 from .forms import PlayerForm
 
+# def register(request):
+    # if request.method == "POST":
+    #     form = PlayerForm(request.POST, request.FILES)
+    #     if form.is_valid():
+    #         form.save()  # Save the form data to the database
+    #         return redirect("home")  # Redirect to the home page after successful form submission
+    # else:
+    #     form = PlayerForm()
 
-def get_name(request):
-    # if this is a POST request we need to process the form data
-    if request.method == "POST":
-        # create a form instance and populate it with data from the request:
-        form = PlayerForm(request.POST)
-        # check whether it's valid:
-        if form.is_valid():
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
-            return HttpResponseRedirect("/thanks/")
-
-    # if a GET (or any other method) we'll create a blank form
-    else:
-        form = PlayerForm()
-
-    return render(request, "register.html", {"form": form})
+    # return render(request, "register.html", {"form": form})

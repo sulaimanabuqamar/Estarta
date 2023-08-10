@@ -1,0 +1,91 @@
+<p class="subtitle">2ⁿᵈ Player</p>
+        <div class="forms1">
+            <input type="text" id="player_fname" name="player_fname" class="form3" placeholder="First Name" required>
+            <input type="text" id="player_lname" name="player_lname" class="form3" placeholder="Last Name" required>
+        </div>
+        <div class="forms1">
+            <input type="text" id="player_number" name="player_number" class="form3" placeholder="Phone Number" required>
+            <input type="text" id="player_email" name="player_email" class="form3" placeholder="Email Address" required>
+        </div>
+        <div class="forms1">
+            <input type="date" id="player_age" name="player_age" class="form3" placeholder="Date of Birth" required>
+            <input type="file" id="player_image" name="player_image" class="form3" >
+        </div>
+        <p class="subtitle">3ʳᵈ Player</p>
+        <div class="forms1">
+            <input type="text" id="player_fname" name="player_fname" class="form3" placeholder="First Name" required>
+            <input type="text" id="player_lname" name="player_lname" class="form3" placeholder="Last Name" required>
+        </div>
+        <div class="forms1">
+            <input type="text" id="player_number" name="player_number" class="form3" placeholder="Phone Number" required>
+            <input type="text" id="player_email" name="player_email" class="form3" placeholder="Email Address" required>
+        </div>
+        <div class="forms1">
+            <input type="date" id="player_age" name="player_age" class="form3" placeholder="Date of Birth" required>
+            <input type="file" id="player_image" name="player_image" class="form3" >
+        </div>
+        <p class="subtitle">4ᵗʰ Player</p>
+        <div class="forms1">
+            <input type="text" id="player_fname" name="player_fname" class="form3" placeholder="First Name" required>
+            <input type="text" id="player_lname" name="player_lname" class="form3" placeholder="Last Name" required>
+        </div>
+        <div class="forms1">
+            <input type="text" id="player_number" name="player_number" class="form3" placeholder="Phone Number" required>
+            <input type="text" id="player_email" name="player_email" class="form3" placeholder="Email Address" required>
+        </div>
+        <div class="forms1">
+            <input type="date" id="player_age" name="player_age" class="form3" placeholder="Date of Birth" required>
+            <input type="file" id="player_image" name="player_image" class="form3" >
+        </div>
+        <p class="subtitle">5ᵗʰ Player</p>
+        <div class="forms1">
+            <input type="text" id="player_fname" name="player_fname" class="form3" placeholder="First Name" required>
+            <input type="text" id="player_lname" name="player_lname" class="form3" placeholder="Last Name" required>
+        </div>
+        <div class="forms1">
+            <input type="text" id="player_number" name="player_number" class="form3" placeholder="Phone Number" required>
+            <input type="text" id="player_email" name="player_email" class="form3" placeholder="Email Address" required>
+        </div>
+        <div class="forms1">
+            <input type="date" id="player_age" name="player_age" class="form3" placeholder="Date of Birth" required>
+            <input type="file" id="player_image" name="player_image" class="form3" >
+        </div>
+        <p class="subtitle">6ᵗʰ Player</p>
+        <div class="forms1">
+            <input type="text" id="player_fname" name="player_fname" class="form3" placeholder="First Name" required>
+            <input type="text" id="player_lname" name="player_lname" class="form3" placeholder="Last Name" required>
+        </div>
+        <div class="forms1">
+            <input type="text" id="player_number" name="player_number" class="form3" placeholder="Phone Number" required>
+            <input type="text" id="player_email" name="player_email" class="form3" placeholder="Email Address" required>
+        </div>
+        <div class="forms1">
+            <input type="date" id="player_age" name="player_age" class="form3" placeholder="Date of Birth" required>
+            <input type="file" id="player_image" name="player_image" class="form3" >
+        </div>
+        <p class="subtitle">7ᵗʰ Player</p>
+        <div class="forms1">
+            <input type="text" id="player_fname" name="player_fname" class="form3" placeholder="First Name" required>
+            <input type="text" id="player_lname" name="player_lname" class="form3" placeholder="Last Name" required>
+        </div>
+        <div class="forms1">
+            <input type="text" id="player_number" name="player_number" class="form3" placeholder="Phone Number" required>
+            <input type="text" id="player_email" name="player_email" class="form3" placeholder="Email Address" required>
+        </div>
+        <div class="forms1">
+            <input type="date" id="player_age" name="player_age" class="form3" placeholder="Date of Birth" required>
+            <input type="file" id="player_image" name="player_image" class="form3" >
+        </div>
+        <p class="subtitle">8ᵗʰ Player</p>
+        <div class="forms1">
+            <input type="text" id="player_fname" name="player_fname" class="form3" placeholder="First Name" required>
+            <input type="text" id="player_lname" name="player_lname" class="form3" placeholder="Last Name" required>
+        </div>
+        <div class="forms1">
+            <input type="text" id="player_number" name="player_number" class="form3" placeholder="Phone Number" required>
+            <input type="text" id="player_email" name="player_email" class="form3" placeholder="Email Address" required>
+        </div>
+        <div class="forms1">
+            <input type="date" id="player_age" name="player_age" class="form3" placeholder="Date of Birth" required>
+            <input type="file" id="player_image" name="player_image" class="form3" >
+        </div>
