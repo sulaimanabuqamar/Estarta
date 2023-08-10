@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from .forms import RegisterationForm
 
@@ -58,8 +58,6 @@ def adminRegister2(request):
 def adminAccounts2(request):
     return render(request, "Admin_Accounts2.html")
 
-from django.shortcuts import render, redirect
-from .forms import PlayerForm
 
 # def register(request):
     # if request.method == "POST":
