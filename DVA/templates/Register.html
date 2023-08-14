@@ -32,7 +32,6 @@
         <form method="post" action="{% url 'register' %}" enctype="multipart/form-data">
         {% csrf_token %}
         {{form}}
-        </form>
         <p class="title">Team Information</p>
         <p class="subtitle">School Name</p>
         <input type="text" id="team_name" name="team_name" class="form1" required><br>

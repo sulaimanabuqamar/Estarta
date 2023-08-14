@@ -21,7 +21,8 @@ def register(request):
         form = RegisterationForm(request.POST, request.FILES)
         print(request.FILES)
         if form.is_valid():
-            form.save
+            print('Form is valid!')
+            form.save()
         return redirect(schedule)
     return render(request, "Register.html", {'form' : RegisterationForm})
 
@@ -57,15 +58,3 @@ def adminRegister2(request):
 
 def adminAccounts2(request):
     return render(request, "Admin_Accounts2.html")
-
-
-# def register(request):
-    # if request.method == "POST":
-    #     form = PlayerForm(request.POST, request.FILES)
-    #     if form.is_valid():
-    #         form.save()  # Save the form data to the database
-    #         return redirect("home")  # Redirect to the home page after successful form submission
-    # else:
-    #     form = PlayerForm()
-
-    # return render(request, "register.html", {"form": form})

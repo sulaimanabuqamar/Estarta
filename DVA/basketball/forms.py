@@ -21,6 +21,7 @@ class PlayerForm(forms.ModelForm):
     player_number = forms.IntegerField()
     player_email = forms.EmailField(max_length=25)
     player_image = forms.ImageField()
+    team_id = forms.CharField(max_length=15)
     class Meta:
         model = Player
         fields = ['player_fname','player_lname', 'player_age', 'player_number', 'player_email', 'player_image', 'team_id']
