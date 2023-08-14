@@ -17,30 +17,36 @@ def teams(request):
 def stats(request):
     return render(request, "Stats.html")
 
+
+# {'team_name': 'AMB', 'team_logo': <InMemoryUploadedFile: corporate.png (image/png)>, 'manager_fname': 'Sulaiman', 'manager_lname': 'AbuQamar', 'manager_number': 562914945, 'manager_email': 'sabuqamar82@gmail.com', 'player_fname': 'Sulaiman', 'player_lname': 'AbuQamar', 'player_number': 562914945, 'player_email': 'sabuqamar82@gmail.com'}
+
+
 def register(request):
     if request.POST:
         form = RegisterationForm(request.POST, request.FILES)
-        print(request.FILES)
-        print(form)
+        # print(request.FILES)
         # form.save()
-        if form.is_valid():
-            cleaned_data = form.cleaned_data
-            team_name = cleaned_data['team_name']
-            team_logo = cleaned_data['team_logo']
-            manager_fname = cleaned_data['manager_fname']
-            manager_lname = cleaned_data['manager_lname']
-            manager_number = cleaned_data['manager_number']
-            manager_email = cleaned_data['manager_email']
-            player_fname = cleaned_data['player_fname']
-            player_lname = cleaned_data['player_lname']
-            player_age = cleaned_data['player_age']
-            player_number = cleaned_data['player_number']
-            player_email = cleaned_data['player_email']
-            player_image = cleaned_data['player_image']
-            team = Team(team_name = team_name, team_logo = team_logo, manager_fname = manager_fname, manager_lname = manager_lname, manager_number = manager_number, manager_email = manager_email)
-            player = Player(player_fname = player_fname, player_lname = player_lname, player_age = player_age, player_number = player_number, player_email = player_email, player_image = player_image)
-            team.save()
-            player.save() 
+        print(form.is_valid())
+        print(form.cleaned_data)
+        # if form.is_valid():
+        cleaned_data = form.cleaned_data
+        print(form.cleaned_data)
+        team_name = cleaned_data['team_name']
+        team_logo = cleaned_data['team_logo']
+        manager_fname = cleaned_data['manager_fname']
+        manager_lname = cleaned_data['manager_lname']
+        manager_number = cleaned_data['manager_number']
+        manager_email = cleaned_data['manager_email']
+        player_fname = cleaned_data['player_fname']
+        player_lname = cleaned_data['player_lname']
+        player_age = cleaned_data['player_age']
+        player_number = cleaned_data['player_number']
+        player_email = cleaned_data['player_email']
+        player_image = cleaned_data['player_image']
+        team = Team(team_name = team_name, team_logo = team_logo, manager_fname = manager_fname, manager_lname = manager_lname, manager_number = manager_number, manager_email = manager_email)
+        team.save()
+        # player = Player(player_fname = player_fname, player_lname = player_lname, player_age = player_age, player_number = player_number, player_email = player_email, player_image = player_image)
+        # player.save() 
         return redirect(schedule)
     return render(request, "Register.html", {'form' : RegisterationForm})
 

@@ -1,7 +1,7 @@
 from django.db import models
 
 class Team(models.Model):
-    team_id = models.CharField(max_length=15, primary_key=True)
+    team_id = models.AutoField(primary_key=True)
     team_name = models.CharField(max_length=25)
     team_logo = models.ImageField(upload_to='team_logos/')
     manager_fname = models.CharField(max_length=25)
@@ -19,7 +19,7 @@ class Player(models.Model):
     player_number = models.IntegerField()
     player_email = models.EmailField(max_length=25)
     player_image = models.ImageField(upload_to='player_images/')
-    team_id = models.ForeignKey(Team, on_delete=models.CASCADE)
+    # team_id = models.ForeignKey(Team, on_delete=models.CASCADE)
     field_goals = models.IntegerField(null=True, blank=True)
     field_goals_percentage = models.FloatField(null=True, blank=True)
     three_pointers = models.IntegerField(null=True, blank=True)

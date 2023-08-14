@@ -2,12 +2,12 @@ from django.contrib import admin
 from .models import Team, Player, ScoreKeeper, Game, Admin
 
 class TeamAdmin(admin.ModelAdmin):
-    list_display = ['team_id', 'team_name', 'manager_fname', 'manager_lname', 'wins', 'loses']
+    list_display = ['team_name', 'manager_fname', 'manager_lname', 'wins', 'loses']
     search_fields = ['team_name', 'manager_fname']
 
 class PlayerAdmin(admin.ModelAdmin):
-    list_display = ['player_id', 'player_fname', 'player_lname', 'team_id', 'player_age', 'player_number']
-    search_fields = ['player_fname', 'team_id__team_name', 'player_number']
+    list_display = ['player_id', 'player_fname', 'player_lname', 'player_age', 'player_number']
+    search_fields = ['player_fname', 'team_name', 'player_number']
 
 class ScoreKeeperAdmin(admin.ModelAdmin):
     list_display = ['keeper_id', 'keeper_name', 'game_id']
