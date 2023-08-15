@@ -3,7 +3,6 @@ from .models import Player
 from .models import Team
 
 class TeamForm(forms.ModelForm):
-    # team_id = forms.CharField(max_length=15)
     team_name = forms.CharField(max_length=25)
     team_logo = forms.ImageField()
     manager_fname = forms.CharField(max_length=25)
@@ -21,7 +20,6 @@ class PlayerForm(forms.ModelForm):
     player_number = forms.IntegerField()
     player_email = forms.EmailField(max_length=25)
     player_image = forms.ImageField()
-    # team_id = forms.CharField(max_length=15)
     class Meta:
         model = Player
         fields = ['player_fname','player_lname', 'player_age', 'player_number', 'player_email', 'player_image']
@@ -29,7 +27,6 @@ class PlayerForm(forms.ModelForm):
 class RegisterationForm(forms.Form):
     def __init__(self, *args, **kwargs):
         super(RegisterationForm, self).__init__(*args, **kwargs)
-        # self.fields['team_id'] = TeamForm().fields['team_id']
         self.fields['team_name'] = TeamForm().fields['team_name']
         self.fields['team_logo'] = TeamForm().fields['team_logo']
         self.fields['manager_fname'] = TeamForm().fields['manager_fname']
