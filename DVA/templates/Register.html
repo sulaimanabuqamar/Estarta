@@ -29,7 +29,7 @@
         <p class="titlefont">REGISTER</p>
       </div>
       <div class="fill">
-        <form method="post" action="{% url 'register' %}" enctype="multipart/form-data">
+        <form method="POST" action="{% url 'register' %}" enctype="multipart/form-data">
           {% csrf_token %}
           
           <div class="title">Team Information</div>
@@ -47,7 +47,7 @@
             <input type="text" name="{{ form.manager_email.name }}" class="form3" placeholder="Email Address" required>
           </div>
           
-          {% comment %} <div class="title">Team Roster</div>
+          <div class="title">Team Roster</div>
           <div class="subtitle">1ˢᵗ Player</div>
           <div class="forms1">
             <input type="text" name="{{ form.player_fname.name }}" class="form3" placeholder="First Name" required>
@@ -58,7 +58,7 @@
             <input type="text" name="{{ form.player_email.name }}" class="form3" placeholder="Email Address" required>
           </div>
           <div class="forms1">
-            <input type="integer" name="{{ form.player_age.name }}" class="form3" placeholder="Age" required>
+            <input type="date" name="{{ form.player_age.name }}" class="form3" placeholder="Age" required>
             <input type="file" name="{{ form.player_image.name }}" class="form3" placeholder="Player Image">
           </div>
           <br>
@@ -69,7 +69,7 @@
           <input type="checkbox" name="{{ form.check2.name }}" class="check"required>
           <label for="{{ form.check2.id_for_label }}" class="checktext">All players have a team jersey.</label><br>
           <input type="checkbox" name="{{ form.check3.name }}" class="check" required>
-          <label for="{{ form.check3.id_for_label }}" class="checktext">I agree to the terms and conditions.</label><br><br><br> {% endcomment %}
+          <label for="{{ form.check3.id_for_label }}" class="checktext">I agree to the terms and conditions.</label><br><br><br>
           <input type="submit" class="submit">
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -108,7 +108,7 @@
                 <input type="text" name="{{ form.player_email.name }}" class="form3" placeholder="Email Address" required>
             </div>
             <div class="forms1">
-                <input type="integer" name="{{ form.player_age.name }}" class="form3" placeholder="Age" required>
+                <input type="date" name="{{ form.player_age.name }}" class="form3" placeholder="Age" required>
                 <input type="file" name="{{ form.player_image.name }}" class="form3" placeholder="Player Image">
             </div>
             `;
