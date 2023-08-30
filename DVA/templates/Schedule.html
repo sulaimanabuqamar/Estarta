@@ -28,418 +28,435 @@
       </div>
       <div class="fill">
          <div class="monthbox">
-            <p class="month">September, 2023</p>
+            <p class="month">January</p>
          </div>
          <div class="schedule">
-            <div class="game" onclick="document.location='boxscore'">
+            {% for Game in schedule %}
+            {% if Game.game_date.month == 1 %}
+               <div class="game" onclick="window.location.href='{% url 'boxscore' game_id=Game.game_id %}'">
                <div class="left">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="">
-                  <p class="team">AMB</p>
+                  <img class="teamlogo">{{Game.team_1_id.logo}}
+                  <p class="team">{{Game.team_1_id.team_abbreviation}}</p>
                </div>
                <div class="middle">
-                  <p class="date">Saturday, 15th</p>
+                  <p class="date">{{ Game.game_date|date:"l, j" }}</p>
                   <div class="score">
-                     <p class="winscore">92</p>
-                     <div class="gamestatus">Final</div>
-                     <p class="losescore">82</p>
+                     {% if Game.team_1_score > Game.team_2_score %}
+                     <p class="winscore">{{ Game.team_1_score }}</p>
+                     <div class="gamestatus">{{ Game.game_status }}</div>
+                     <p class="losescore">{{ Game.team_2_score }}</p>
+                     {% else %}
+                     <p class="winscore">{{ Game.team_2_score }}</p>
+                     <div class="gamestatus">{{ Game.game_status }}</div>
+                     <p class="losescore">{{ Game.team_1_score }}</p>
+                     {% endif %}
                   </div>
-                  <p class="vs">VS</p>
                </div>
-               <div class="right">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
-               </div>
+               <p class="vs">VS</p>
             </div>
-            <div class="game" onclick="document.location='boxscore'">
-               <div class="left">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
-               </div>
-               <div class="middle">
-                  <p class="date">Saturday, 15th</p>
-                  <div class="score">
-                     <p class="winscore">92</p>
-                     <div class="gamestatus">Final</div>
-                     <p class="losescore">82</p>
-                  </div>
-                  <p class="vs">VS</p>
-               </div>
-               <div class="right">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
-               </div>
-            </div>
-            <div class="game" onclick="document.location='boxscore'">
-               <div class="left">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
-               </div>
-               <div class="middle">
-                  <p class="date">Saturday, 15th</p>
-                  <div class="score">
-                     <p class="winscore">92</p>
-                     <div class="gamestatus">Final</div>
-                     <p class="losescore">82</p>
-                  </div>
-                  <p class="vs">VS</p>
-               </div>
-               <div class="right">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
-               </div>
-            </div>
-            <div class="game" onclick="document.location='boxscore'">
-               <div class="left">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
-               </div>
-               <div class="middle">
-                  <p class="date">Saturday, 15th</p>
-                  <div class="score">
-                     <p class="winscore">92</p>
-                     <div class="gamestatus">Final</div>
-                     <p class="losescore">82</p>
-                  </div>
-                  <p class="vs">VS</p>
-               </div>
-               <div class="right">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
-               </div>
-            </div>
-            <div class="game" onclick="document.location='boxscore'">
-               <div class="left">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
-               </div>
-               <div class="middle">
-                  <p class="date">Saturday, 15th</p>
-                  <div class="score">
-                     <p class="winscore">92</p>
-                     <div class="gamestatus">Final</div>
-                     <p class="losescore">82</p>
-                  </div>
-                  <p class="vs">VS</p>
-               </div>
-               <div class="right">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
-               </div>
+            <div class="right">
+               <img class="teamlogo"></img>
+               <p class="team">{{Game.team_2_id.team_abbreviation}}</p>
             </div>
          </div>
+         {% endif %}
+         {% endfor %}
+      </div>
+      </div>
+      <div class="fill">
          <div class="monthbox">
-            <p class="month">October, 2023</p>
+            <p class="month">February</p>
          </div>
          <div class="schedule">
-            <div class="game" onclick="document.location='boxscore'">
+            {% for Game in schedule %}
+            {% if Game.game_date.month == 2 %}
+               <div class="game" onclick="window.location.href='{% url 'boxscore' game_id=Game.game_id %}'">
                <div class="left">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
+                  <img class="teamlogo" src="{{ Game.team_1_id.logo.url }}" alt="{{ Game.team_1_id.team_abbreviation }} Logo">
+                  <p class="team">{{Game.team_1_id.team_abbreviation}}</p>
                </div>
                <div class="middle">
-                  <p class="date">Saturday, 15th</p>
+                  <p class="date">{{ Game.game_date|date:"l, j" }}</p>
                   <div class="score">
-                     <p class="winscore">92</p>
-                     <div class="gamestatus">Final</div>
-                     <p class="losescore">82</p>
+                     {% if Game.team_1_score > Game.team_2_score %}
+                     <p class="winscore">{{ Game.team_1_score }}</p>
+                     <div class="gamestatus">{{ Game.game_status }}</div>
+                     <p class="losescore">{{ Game.team_2_score }}</p>
+                     {% else %}
+                     <p class="winscore">{{ Game.team_2_score }}</p>
+                     <div class="gamestatus">{{ Game.game_status }}</div>
+                     <p class="losescore">{{ Game.team_1_score }}</p>
+                     {% endif %}
                   </div>
                   <p class="vs">VS</p>
                </div>
                <div class="right">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
+                  <img class="teamlogo" src="{{ Game.team_2_id.logo.url }}" alt="{{ Game.team_2_id.team_abbreviation }} Logo">
+                  <p class="team">{{Game.team_2_id.team_abbreviation}}</p>
                </div>
             </div>
-            <div class="game" onclick="document.location='boxscore'">
-               <div class="left">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
-               </div>
-               <div class="middle">
-                  <p class="date">Saturday, 15th</p>
-                  <div class="score">
-                     <p class="winscore">92</p>
-                     <div class="gamestatus">Final</div>
-                     <p class="losescore">82</p>
-                  </div>
-                  <p class="vs">VS</p>
-               </div>
-               <div class="right">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
-               </div>
-            </div>
-            <div class="game" onclick="document.location='boxscore'">
-               <div class="left">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
-               </div>
-               <div class="middle">
-                  <p class="date">Saturday, 15th</p>
-                  <div class="score">
-                     <p class="winscore">92</p>
-                     <div class="gamestatus">Final</div>
-                     <p class="losescore">82</p>
-                  </div>
-                  <p class="vs">VS</p>
-               </div>
-               <div class="right">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
-               </div>
-            </div>
-            <div class="game" onclick="document.location='boxscore'">
-               <div class="left">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
-               </div>
-               <div class="middle">
-                  <p class="date">Saturday, 15th</p>
-                  <div class="score">
-                     <p class="winscore">92</p>
-                     <div class="gamestatus">Final</div>
-                     <p class="losescore">82</p>
-                  </div>
-                  <p class="vs">VS</p>
-               </div>
-               <div class="right">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
-               </div>
-            </div>
-            <div class="game" onclick="document.location='boxscore'">
-               <div class="left">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
-               </div>
-               <div class="middle">
-                  <p class="date">Saturday, 15th</p>
-                  <div class="score">
-                     <p class="winscore">92</p>
-                     <div class="gamestatus">Final</div>
-                     <p class="losescore">82</p>
-                  </div>
-                  <p class="vs">VS</p>
-               </div>
-               <div class="right">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
-               </div>
-            </div>
-            <div class="game" onclick="document.location='boxscore'">
-               <div class="left">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
-               </div>
-               <div class="middle">
-                  <p class="date">Saturday, 15th</p>
-                  <div class="score">
-                     <p class="winscore">92</p>
-                     <div class="gamestatus">Final</div>
-                     <p class="losescore">82</p>
-                  </div>
-                  <p class="vs">VS</p>
-               </div>
-               <div class="right">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
-               </div>
-            </div>
-            <div class="game" onclick="document.location='boxscore'">
-               <div class="left">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
-               </div>
-               <div class="middle">
-                  <p class="date">Saturday, 15th</p>
-                  <div class="score">
-                     <p class="winscore">92</p>
-                     <div class="gamestatus">Final</div>
-                     <p class="losescore">82</p>
-                  </div>
-                  <p class="vs">VS</p>
-               </div>
-               <div class="right">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
-               </div>
-            </div>
+            {% endif %}
+            {% endfor %}
          </div>
+      </div>
+      <div class="fill">
          <div class="monthbox">
-            <p class="month">November, 2023</p>
+            <p class="month">March</p>
          </div>
          <div class="schedule">
-            <div class="game" onclick="document.location='boxscore'">
+            {% for Game in schedule %}
+            {% if Game.game_date.month == 3 %}
+               <div class="game" onclick="window.location.href='{% url 'boxscore' game_id=Game.game_id %}'">
                <div class="left">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
+                  <img class="teamlogo" src="{{ Game.team_1_id.logo.url }}" alt="{{ Game.team_1_id.team_abbreviation }} Logo">
+                  <p class="team">{{Game.team_1_id.team_abbreviation}}</p>
                </div>
                <div class="middle">
-                  <p class="date">Saturday, 15th</p>
+                  <p class="date">{{ Game.game_date|date:"l, j" }}</p>
                   <div class="score">
-                     <p class="winscore">92</p>
-                     <div class="gamestatus">Final</div>
-                     <p class="losescore">82</p>
+                     {% if Game.team_1_score > Game.team_2_score %}
+                     <p class="winscore">{{ Game.team_1_score }}</p>
+                     <div class="gamestatus">{{ Game.game_status }}</div>
+                     <p class="losescore">{{ Game.team_2_score }}</p>
+                     {% else %}
+                     <p class="winscore">{{ Game.team_2_score }}</p>
+                     <div class="gamestatus">{{ Game.game_status }}</div>
+                     <p class="losescore">{{ Game.team_1_score }}</p>
+                     {% endif %}
                   </div>
                   <p class="vs">VS</p>
                </div>
                <div class="right">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
+                  <img class="teamlogo" src="{{ Game.team_2_id.logo.url }}" alt="{{ Game.team_2_id.team_abbreviation }} Logo">
+                  <p class="team">{{Game.team_2_id.team_abbreviation}}</p>
                </div>
             </div>
-            <div class="game" onclick="document.location='boxscore'">
+            {% endif %}
+            {% endfor %}
+         </div>
+      </div>
+      <div class="fill">
+         <div class="monthbox">
+            <p class="month">April</p>
+         </div>
+         <div class="schedule">
+            {% for Game in schedule %}
+            {% if Game.game_date.month == 4 %}
+               <div class="game" onclick="window.location.href='{% url 'boxscore' game_id=Game.game_id %}'">
                <div class="left">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
+                  <img class="teamlogo" src="{{ Game.team_1_id.logo.url }}" alt="{{ Game.team_1_id.team_abbreviation }} Logo">
+                  <p class="team">{{Game.team_1_id.team_abbreviation}}</p>
                </div>
                <div class="middle">
-                  <p class="date">Saturday, 15th</p>
+                  <p class="date">{{ Game.game_date|date:"l, j" }}</p>
                   <div class="score">
-                     <p class="winscore">92</p>
-                     <div class="gamestatus">Final</div>
-                     <p class="losescore">82</p>
+                     {% if Game.team_1_score > Game.team_2_score %}
+                     <p class="winscore">{{ Game.team_1_score }}</p>
+                     <div class="gamestatus">{{ Game.game_status }}</div>
+                     <p class="losescore">{{ Game.team_2_score }}</p>
+                     {% else %}
+                     <p class="winscore">{{ Game.team_2_score }}</p>
+                     <div class="gamestatus">{{ Game.game_status }}</div>
+                     <p class="losescore">{{ Game.team_1_score }}</p>
+                     {% endif %}
                   </div>
                   <p class="vs">VS</p>
                </div>
                <div class="right">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
+                  <img class="teamlogo" src="{{ Game.team_2_id.logo.url }}" alt="{{ Game.team_2_id.team_abbreviation }} Logo">
+                  <p class="team">{{Game.team_2_id.team_abbreviation}}</p>
                </div>
             </div>
-            <div class="game" onclick="document.location='boxscore'">
+            {% endif %}
+            {% endfor %}
+         </div>
+      </div>
+      <div class="fill">
+         <div class="monthbox">
+            <p class="month">May</p>
+         </div>
+         <div class="schedule">
+            {% for Game in schedule %}
+            {% if Game.game_date.month == 5 %}
+               <div class="game" onclick="window.location.href='{% url 'boxscore' game_id=Game.game_id %}'">
                <div class="left">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
+                  <img class="teamlogo" src="{{ Game.team_1_id.logo.url }}" alt="{{ Game.team_1_id.team_abbreviation }} Logo">
+                  <p class="team">{{Game.team_1_id.team_abbreviation}}</p>
                </div>
                <div class="middle">
-                  <p class="date">Saturday, 15th</p>
+                  <p class="date">{{ Game.game_date|date:"l, j" }}</p>
                   <div class="score">
-                     <p class="winscore">92</p>
-                     <div class="gamestatus">Final</div>
-                     <p class="losescore">82</p>
+                     {% if Game.team_1_score > Game.team_2_score %}
+                     <p class="winscore">{{ Game.team_1_score }}</p>
+                     <div class="gamestatus">{{ Game.game_status }}</div>
+                     <p class="losescore">{{ Game.team_2_score }}</p>
+                     {% else %}
+                     <p class="winscore">{{ Game.team_2_score }}</p>
+                     <div class="gamestatus">{{ Game.game_status }}</div>
+                     <p class="losescore">{{ Game.team_1_score }}</p>
+                     {% endif %}
                   </div>
                   <p class="vs">VS</p>
                </div>
                <div class="right">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
+                  <img class="teamlogo" src="{{ Game.team_2_id.logo.url }}" alt="{{ Game.team_2_id.team_abbreviation }} Logo">
+                  <p class="team">{{Game.team_2_id.team_abbreviation}}</p>
                </div>
             </div>
-            <div class="game" onclick="document.location='boxscore'">
+            {% endif %}
+            {% endfor %}
+         </div>
+      </div>
+      <div class="fill">
+         <div class="monthbox">
+            <p class="month">June</p>
+         </div>
+         <div class="schedule">
+            {% for Game in schedule %}
+            {% if Game.game_date.month == 6 %}
+               <div class="game" onclick="window.location.href='{% url 'boxscore' game_id=Game.game_id %}'">
                <div class="left">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
+                  <img class="teamlogo" src="{{ Game.team_1_id.logo.url }}" alt="{{ Game.team_1_id.team_abbreviation }} Logo">
+                  <p class="team">{{Game.team_1_id.team_abbreviation}}</p>
                </div>
                <div class="middle">
-                  <p class="date">Saturday, 15th</p>
+                  <p class="date">{{ Game.game_date|date:"l, j" }}</p>
                   <div class="score">
-                     <p class="winscore">92</p>
-                     <div class="gamestatus">Final</div>
-                     <p class="losescore">82</p>
+                     {% if Game.team_1_score > Game.team_2_score %}
+                     <p class="winscore">{{ Game.team_1_score }}</p>
+                     <div class="gamestatus">{{ Game.game_status }}</div>
+                     <p class="losescore">{{ Game.team_2_score }}</p>
+                     {% else %}
+                     <p class="winscore">{{ Game.team_2_score }}</p>
+                     <div class="gamestatus">{{ Game.game_status }}</div>
+                     <p class="losescore">{{ Game.team_1_score }}</p>
+                     {% endif %}
                   </div>
                   <p class="vs">VS</p>
                </div>
                <div class="right">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
+                  <img class="teamlogo" src="{{ Game.team_2_id.logo.url }}" alt="{{ Game.team_2_id.team_abbreviation }} Logo">
+                  <p class="team">{{Game.team_2_id.team_abbreviation}}</p>
                </div>
             </div>
-            <div class="game" onclick="document.location='boxscore'">
+            {% endif %}
+            {% endfor %}
+         </div>
+      </div>
+      <div class="fill">
+         <div class="monthbox">
+            <p class="month">July</p>
+         </div>
+         <div class="schedule">
+            {% for Game in schedule %}
+            {% if Game.game_date.month == 7 %}
+               <div class="game" onclick="window.location.href='{% url 'boxscore' game_id=Game.game_id %}'">
                <div class="left">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
+                  <img class="teamlogo" src="{{ Game.team_1_id.logo.url }}" alt="{{ Game.team_1_id.team_abbreviation }} Logo">
+                  <p class="team">{{Game.team_1_id.team_abbreviation}}</p>
                </div>
                <div class="middle">
-                  <p class="date">Saturday, 15th</p>
+                  <p class="date">{{ Game.game_date|date:"l, j" }}</p>
                   <div class="score">
-                     <p class="winscore">92</p>
-                     <div class="gamestatus">Final</div>
-                     <p class="losescore">82</p>
+                     {% if Game.team_1_score > Game.team_2_score %}
+                     <p class="winscore">{{ Game.team_1_score }}</p>
+                     <div class="gamestatus">{{ Game.game_status }}</div>
+                     <p class="losescore">{{ Game.team_2_score }}</p>
+                     {% else %}
+                     <p class="winscore">{{ Game.team_2_score }}</p>
+                     <div class="gamestatus">{{ Game.game_status }}</div>
+                     <p class="losescore">{{ Game.team_1_score }}</p>
+                     {% endif %}
                   </div>
                   <p class="vs">VS</p>
                </div>
                <div class="right">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
+                  <img class="teamlogo" src="{{ Game.team_2_id.logo.url }}" alt="{{ Game.team_2_id.team_abbreviation }} Logo">
+                  <p class="team">{{Game.team_2_id.team_abbreviation}}</p>
                </div>
             </div>
-            <div class="game" onclick="document.location='boxscore'">
+            {% endif %}
+            {% endfor %}
+         </div>
+      </div>
+      <div class="fill">
+         <div class="monthbox">
+            <p class="month">August</p>
+         </div>
+         <div class="schedule">
+            {% for Game in schedule %}
+            {% if Game.game_date.month == 8 %}
+               <div class="game" onclick="window.location.href='{% url 'boxscore' game_id=Game.game_id %}'">
                <div class="left">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
+                  <img class="teamlogo" src="{{ Game.team_1_id.logo.url }}" alt="{{ Game.team_1_id.team_abbreviation }} Logo">
+                  <p class="team">{{Game.team_1_id.team_abbreviation}}</p>
                </div>
                <div class="middle">
-                  <p class="date">Saturday, 15th</p>
+                  <p class="date">{{ Game.game_date|date:"l, j" }}</p>
                   <div class="score">
-                     <p class="winscore">92</p>
-                     <div class="gamestatus">Final</div>
-                     <p class="losescore">82</p>
+                     {% if Game.team_1_score > Game.team_2_score %}
+                     <p class="winscore">{{ Game.team_1_score }}</p>
+                     <div class="gamestatus">{{ Game.game_status }}</div>
+                     <p class="losescore">{{ Game.team_2_score }}</p>
+                     {% else %}
+                     <p class="winscore">{{ Game.team_2_score }}</p>
+                     <div class="gamestatus">{{ Game.game_status }}</div>
+                     <p class="losescore">{{ Game.team_1_score }}</p>
+                     {% endif %}
                   </div>
                   <p class="vs">VS</p>
                </div>
                <div class="right">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
+                  <img class="teamlogo" src="{{ Game.team_2_id.logo.url }}" alt="{{ Game.team_2_id.team_abbreviation }} Logo">
+                  <p class="team">{{Game.team_2_id.team_abbreviation}}</p>
                </div>
             </div>
-            <div class="game" onclick="document.location='boxscore'">
+            {% endif %}
+            {% endfor %}
+         </div>
+      </div>
+      <div class="fill">
+         <div class="monthbox">
+            <p class="month">September</p>
+         </div>
+         <div class="schedule">
+            {% for Game in schedule %}
+            {% if Game.game_date.month == 9 %}
+               <div class="game" onclick="window.location.href='{% url 'boxscore' game_id=Game.game_id %}'">
                <div class="left">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
+                  <img class="teamlogo" src="{{ Game.team_1_id.logo.url }}" alt="{{ Game.team_1_id.team_abbreviation }} Logo">
+                  <p class="team">{{Game.team_1_id.team_abbreviation}}</p>
                </div>
                <div class="middle">
-                  <p class="date">Saturday, 15th</p>
+                  <p class="date">{{ Game.game_date|date:"l, j" }}</p>
                   <div class="score">
-                     <p class="winscore">92</p>
-                     <div class="gamestatus">Final</div>
-                     <p class="losescore">82</p>
+                     {% if Game.team_1_score > Game.team_2_score %}
+                     <p class="winscore">{{ Game.team_1_score }}</p>
+                     <div class="gamestatus">{{ Game.game_status }}</div>
+                     <p class="losescore">{{ Game.team_2_score }}</p>
+                     {% else %}
+                     <p class="winscore">{{ Game.team_2_score }}</p>
+                     <div class="gamestatus">{{ Game.game_status }}</div>
+                     <p class="losescore">{{ Game.team_1_score }}</p>
+                     {% endif %}
                   </div>
                   <p class="vs">VS</p>
                </div>
                <div class="right">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
+                  <img class="teamlogo" src="{{ Game.team_2_id.logo.url }}" alt="{{ Game.team_2_id.team_abbreviation }} Logo">
+                  <p class="team">{{Game.team_2_id.team_abbreviation}}</p>
                </div>
             </div>
-            <div class="game" onclick="document.location='boxscore'">
+            {% endif %}
+            {% endfor %}
+         </div>
+      </div>
+      <div class="fill">
+         <div class="monthbox">
+            <p class="month">October</p>
+         </div>
+         <div class="schedule">
+            {% for Game in schedule %}
+            {% if Game.game_date.month == 10 %}
+               <div class="game" onclick="window.location.href='{% url 'boxscore' game_id=Game.game_id %}'">
                <div class="left">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
+                  <img class="teamlogo" src="{{ Game.team_1_id.logo.url }}" alt="{{ Game.team_1_id.team_abbreviation }} Logo">
+                  <p class="team">{{Game.team_1_id.team_abbreviation}}</p>
                </div>
                <div class="middle">
-                  <p class="date">Saturday, 15th</p>
+                  <p class="date">{{ Game.game_date|date:"l, j" }}</p>
                   <div class="score">
-                     <p class="winscore">92</p>
-                     <div class="gamestatus">Final</div>
-                     <p class="losescore">82</p>
+                     {% if Game.team_1_score > Game.team_2_score %}
+                     <p class="winscore">{{ Game.team_1_score }}</p>
+                     <div class="gamestatus">{{ Game.game_status }}</div>
+                     <p class="losescore">{{ Game.team_2_score }}</p>
+                     {% else %}
+                     <p class="winscore">{{ Game.team_2_score }}</p>
+                     <div class="gamestatus">{{ Game.game_status }}</div>
+                     <p class="losescore">{{ Game.team_1_score }}</p>
+                     {% endif %}
                   </div>
                   <p class="vs">VS</p>
                </div>
                <div class="right">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
+                  <img class="teamlogo" src="{{ Game.team_2_id.logo.url }}" alt="{{ Game.team_2_id.team_abbreviation }} Logo">
+                  <p class="team">{{Game.team_2_id.team_abbreviation}}</p>
                </div>
             </div>
-            <div class="game" onclick="document.location='boxscore'">
+            {% endif %}
+            {% endfor %}
+         </div>
+      </div>
+      <div class="fill">
+         <div class="monthbox">
+            <p class="month">November</p>
+         </div>
+         <div class="schedule">
+            {% for Game in schedule %}
+            {% if Game.game_date.month == 11 %}
+               <div class="game" onclick="window.location.href='{% url 'boxscore' game_id=Game.game_id %}'">
                <div class="left">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
+                  <img class="teamlogo" src="{{ Game.team_1_id.logo.url }}" alt="{{ Game.team_1_id.team_abbreviation }} Logo">
+                  <p class="team">{{Game.team_1_id.team_abbreviation}}</p>
                </div>
                <div class="middle">
-                  <p class="date">Saturday, 15th</p>
+                  <p class="date">{{ Game.game_date|date:"l, j" }}</p>
                   <div class="score">
-                     <p class="winscore">92</p>
-                     <div class="gamestatus">Final</div>
-                     <p class="losescore">82</p>
+                     {% if Game.team_1_score > Game.team_2_score %}
+                     <p class="winscore">{{ Game.team_1_score }}</p>
+                     <div class="gamestatus">{{ Game.game_status }}</div>
+                     <p class="losescore">{{ Game.team_2_score }}</p>
+                     {% else %}
+                     <p class="winscore">{{ Game.team_2_score }}</p>
+                     <div class="gamestatus">{{ Game.game_status }}</div>
+                     <p class="losescore">{{ Game.team_1_score }}</p>
+                     {% endif %}
                   </div>
                   <p class="vs">VS</p>
                </div>
                <div class="right">
-                  <img class="teamlogo" src="{% static '../media/images/mascot.png'%}" alt="Player Image">
-                  <p class="team">AMB</p>
+                  <img class="teamlogo" src="{{ Game.team_2_id.logo.url }}" alt="{{ Game.team_2_id.team_abbreviation }} Logo">
+                  <p class="team">{{Game.team_2_id.team_abbreviation}}</p>
                </div>
             </div>
+            {% endif %}
+            {% endfor %}
+         </div>
+      </div>
+      <div class="fill">
+         <div class="monthbox">
+            <p class="month">December</p>
+         </div>
+         <div class="schedule">
+            {% for Game in schedule %}
+            {% if Game.game_date.month == 12 %}
+               <div class="game" onclick="window.location.href='{% url 'boxscore' game_id=Game.game_id %}'">
+               <div class="left">
+                  <img class="teamlogo" src="{{ Game.team_1_id.logo.url }}" alt="{{ Game.team_1_id.team_abbreviation }} Logo">
+                  <p class="team">{{Game.team_1_id.team_abbreviation}}</p>
+               </div>
+               <div class="middle">
+                  <p class="date">{{ Game.game_date|date:"l, j" }}</p>
+                  <div class="score">
+                     {% if Game.team_1_score > Game.team_2_score %}
+                     <p class="winscore">{{ Game.team_1_score }}</p>
+                     <div class="gamestatus">{{ Game.game_status }}</div>
+                     <p class="losescore">{{ Game.team_2_score }}</p>
+                     {% else %}
+                     <p class="winscore">{{ Game.team_2_score }}</p>
+                     <div class="gamestatus">{{ Game.game_status }}</div>
+                     <p class="losescore">{{ Game.team_1_score }}</p>
+                     {% endif %}
+                  </div>
+                  <p class="vs">VS</p>
+               </div>
+               <div class="right">
+                  <img class="teamlogo" src="{{ Game.team_2_id.logo.url }}" alt="{{ Game.team_2_id.team_abbreviation }} Logo">
+                  <p class="team">{{Game.team_2_id.team_abbreviation}}</p>
+               </div>
+            </div>
+            {% endif %}
+            {% endfor %}
          </div>
       </div>
    </body>

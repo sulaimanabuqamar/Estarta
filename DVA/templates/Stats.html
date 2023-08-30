@@ -27,325 +27,98 @@
          <p class="titlefont">STATS</p>
       </div>
       <div class="fill">
+
          <div class="statsbox" onclick="document.location='allstats'">
             <p class="title">Point Leaders</p>
+            {% for Player in point_leaders|slice:":5" %}  
             <div class="playerbox">
-               <img class="playerimage" src="{% static '../media/images/pimage.png' %}">
-               <div class="playerinfo">
-                  <p class="playername">Ahmad Abuqamr</p>
-                  <p class="playerteam">AMB</p>
-               </div>
-               <div class="statbox">
-                  <p class="stat">23.7</p>
-               </div>
+                <img class="playerimage" src="{{ Player.player_image.url }}" alt="{{ Player.player_fname }} {{ Player.player_lname }}">
+                <div class="playerinfo">
+                    <p class="playername">{{ Player.player_fname }} {{ Player.player_lname }}</p>
+                    <p class="playerteam">{{ Player.team_id.team_abbreviation }}</p>
+                </div>
+                <div class="statbox">
+                    <p class="stat">{{ Player.points }}</p>
+                </div>
             </div>
-            <div class="playerbox">
-               <img class="playerimage" src="{% static '../media/images/pimage.png' %}">
-               <div class="playerinfo">
-                  <p class="playername">Ahmad Abuqamr</p>
-                  <p class="playerteam">AMB</p>
-               </div>
-               <div class="statbox">
-                  <p class="stat">23.7</p>
-               </div>
-            </div>
-            <div class="playerbox">
-               <img class="playerimage" src="{% static '../media/images/pimage.png' %}">
-               <div class="playerinfo">
-                  <p class="playername">Ahmad Abuqamr</p>
-                  <p class="playerteam">AMB</p>
-               </div>
-               <div class="statbox">
-                  <p class="stat">23.7</p>
-               </div>
-            </div>
-            <div class="playerbox">
-               <img class="playerimage" src="{% static '../media/images/pimage.png' %}">
-               <div class="playerinfo">
-                  <p class="playername">Ahmad Abuqamr</p>
-                  <p class="playerteam">AMB</p>
-               </div>
-               <div class="statbox">
-                  <p class="stat">23.7</p>
-               </div>
-            </div>
-            <div class="playerbox">
-               <img class="playerimage" src="{% static '../media/images/pimage.png' %}">
-               <div class="playerinfo">
-                  <p class="playername">Ahmad Abuqamr</p>
-                  <p class="playerteam">AMB</p>
-               </div>
-               <div class="statbox">
-                  <p class="stat">23.7</p>
-               </div>
-            </div>
-         </div>
+            {% endfor %}
+        </div>
+            
          <div class="statsbox" onclick="document.location='allstats'">
             <p class="title">Assist Leaders</p>
+            {% for Player in assist_leaders|slice:":5" %}  
             <div class="playerbox">
-               <img class="playerimage" src="{% static '../media/images/pimage.png' %}">
-               <div class="playerinfo">
-                  <p class="playername">Ahmad Abuqamr</p>
-                  <p class="playerteam">AMB</p>
-               </div>
-               <div class="statbox">
-                  <p class="stat">23.7</p>
-               </div>
+                <img class="playerimage" src="{{ Player.player_image.url }}" alt="{{ Player.player_fname }} {{ Player.player_lname }}">
+                <div class="playerinfo">
+                    <p class="playername">{{ Player.player_fname }} {{ Player.player_lname }}</p>
+                    <p class="playerteam">{{ Player.team_id.team_abbreviation }}</p>
+                </div>
+                <div class="statbox">
+                    <p class="stat">{{ Player.assists }}</p>
+                </div>
             </div>
-            <div class="playerbox">
-               <img class="playerimage" src="{% static '../media/images/pimage.png' %}">
-               <div class="playerinfo">
-                  <p class="playername">Ahmad Abuqamr</p>
-                  <p class="playerteam">AMB</p>
-               </div>
-               <div class="statbox">
-                  <p class="stat">23.7</p>
-               </div>
-            </div>
-            <div class="playerbox">
-               <img class="playerimage" src="{% static '../media/images/pimage.png' %}">
-               <div class="playerinfo">
-                  <p class="playername">Ahmad Abuqamr</p>
-                  <p class="playerteam">AMB</p>
-               </div>
-               <div class="statbox">
-                  <p class="stat">23.7</p>
-               </div>
-            </div>
-            <div class="playerbox">
-               <img class="playerimage" src="{% static '../media/images/pimage.png' %}">
-               <div class="playerinfo">
-                  <p class="playername">Ahmad Abuqamr</p>
-                  <p class="playerteam">AMB</p>
-               </div>
-               <div class="statbox">
-                  <p class="stat">23.7</p>
-               </div>
-            </div>
-            <div class="playerbox">
-               <img class="playerimage" src="{% static '../media/images/pimage.png' %}">
-               <div class="playerinfo">
-                  <p class="playername">Ahmad Abuqamr</p>
-                  <p class="playerteam">AMB</p>
-               </div>
-               <div class="statbox">
-                  <p class="stat">23.7</p>
-               </div>
-            </div>
-         </div>
+            {% endfor %}
+        </div>
          <div class="statsbox" onclick="document.location='allstats'">
             <p class="title">Rebound Leaders</p>
+            {% for Player in rebound_leaders|slice:":5" %}  
             <div class="playerbox">
-               <img class="playerimage" src="{% static '../media/images/pimage.png' %}">
-               <div class="playerinfo">
-                  <p class="playername">Ahmad Abuqamr</p>
-                  <p class="playerteam">AMB</p>
-               </div>
-               <div class="statbox">
-                  <p class="stat">23.7</p>
-               </div>
+                <img class="playerimage" src="{{ Player.player_image.url }}" alt="{{ Player.player_fname }} {{ Player.player_lname }}">
+                <div class="playerinfo">
+                    <p class="playername">{{ Player.player_fname }} {{ Player.player_lname }}</p>
+                    <p class="playerteam">{{ Player.team_id.team_abbreviation }}</p>
+                </div>
+                <div class="statbox">
+                    <p class="stat">{{ Player.rebounds }}</p>
+                </div>
             </div>
-            <div class="playerbox">
-               <img class="playerimage" src="{% static '../media/images/pimage.png' %}">
-               <div class="playerinfo">
-                  <p class="playername">Ahmad Abuqamr</p>
-                  <p class="playerteam">AMB</p>
-               </div>
-               <div class="statbox">
-                  <p class="stat">23.7</p>
-               </div>
-            </div>
-            <div class="playerbox">
-               <img class="playerimage" src="{% static '../media/images/pimage.png' %}">
-               <div class="playerinfo">
-                  <p class="playername">Ahmad Abuqamr</p>
-                  <p class="playerteam">AMB</p>
-               </div>
-               <div class="statbox">
-                  <p class="stat">23.7</p>
-               </div>
-            </div>
-            <div class="playerbox">
-               <img class="playerimage" src="{% static '../media/images/pimage.png' %}">
-               <div class="playerinfo">
-                  <p class="playername">Ahmad Abuqamr</p>
-                  <p class="playerteam">AMB</p>
-               </div>
-               <div class="statbox">
-                  <p class="stat">23.7</p>
-               </div>
-            </div>
-            <div class="playerbox">
-               <img class="playerimage" src="{% static '../media/images/pimage.png' %}">
-               <div class="playerinfo">
-                  <p class="playername">Ahmad Abuqamr</p>
-                  <p class="playerteam">AMB</p>
-               </div>
-               <div class="statbox">
-                  <p class="stat">23.7</p>
-               </div>
-            </div>
-         </div>
+            {% endfor %}
+        </div>
          <div class="statsbox" onclick="document.location='allstats'">
             <p class="title">Block Leaders</p>
+            {% for Player in assist_leaders|slice:":5" %}  
             <div class="playerbox">
-               <img class="playerimage" src="{% static '../media/images/pimage.png' %}">
-               <div class="playerinfo">
-                  <p class="playername">Ahmad Abuqamr</p>
-                  <p class="playerteam">AMB</p>
-               </div>
-               <div class="statbox">
-                  <p class="stat">23.7</p>
-               </div>
+                <img class="playerimage" src="{{ Player.player_image.url }}" alt="{{ Player.player_fname }} {{ Player.player_lname }}">
+                <div class="playerinfo">
+                    <p class="playername">{{ Player.player_fname }} {{ Player.player_lname }}</p>
+                    <p class="playerteam">{{ Player.team_id.team_abbreviation }}</p>
+                </div>
+                <div class="statbox">
+                    <p class="stat">{{ Player.blocks }}</p>
+                </div>
             </div>
-            <div class="playerbox">
-               <img class="playerimage" src="{% static '../media/images/pimage.png' %}">
-               <div class="playerinfo">
-                  <p class="playername">Ahmad Abuqamr</p>
-                  <p class="playerteam">AMB</p>
-               </div>
-               <div class="statbox">
-                  <p class="stat">23.7</p>
-               </div>
-            </div>
-            <div class="playerbox">
-               <img class="playerimage" src="{% static '../media/images/pimage.png' %}">
-               <div class="playerinfo">
-                  <p class="playername">Ahmad Abuqamr</p>
-                  <p class="playerteam">AMB</p>
-               </div>
-               <div class="statbox">
-                  <p class="stat">23.7</p>
-               </div>
-            </div>
-            <div class="playerbox">
-               <img class="playerimage" src="{% static '../media/images/pimage.png' %}">
-               <div class="playerinfo">
-                  <p class="playername">Ahmad Abuqamr</p>
-                  <p class="playerteam">AMB</p>
-               </div>
-               <div class="statbox">
-                  <p class="stat">23.7</p>
-               </div>
-            </div>
-            <div class="playerbox">
-               <img class="playerimage" src="{% static '../media/images/pimage.png' %}">
-               <div class="playerinfo">
-                  <p class="playername">Ahmad Abuqamr</p>
-                  <p class="playerteam">AMB</p>
-               </div>
-               <div class="statbox">
-                  <p class="stat">23.7</p>
-               </div>
-            </div>
-         </div>
+            {% endfor %}
+        </div>
          <div class="statsbox" onclick="document.location='allstats'">
             <p class="title">Steals Leaders</p>
+            {% for Player in steal_leaders|slice:":5" %}  
             <div class="playerbox">
-               <img class="playerimage" src="{% static '../media/images/pimage.png' %}">
-               <div class="playerinfo">
-                  <p class="playername">Ahmad Abuqamr</p>
-                  <p class="playerteam">AMB</p>
-               </div>
-               <div class="statbox">
-                  <p class="stat">23.7</p>
-               </div>
+                <img class="playerimage" src="{{ Player.player_image.url }}" alt="{{ Player.player_fname }} {{ Player.player_lname }}">
+                <div class="playerinfo">
+                    <p class="playername">{{ Player.player_fname }} {{ Player.player_lname }}</p>
+                    <p class="playerteam">{{ Player.team_id.team_abbreviation }}</p>
+                </div>
+                <div class="statbox">
+                    <p class="stat">{{ Player.steals }}</p>
+                </div>
             </div>
-            <div class="playerbox">
-               <img class="playerimage" src="{% static '../media/images/pimage.png' %}">
-               <div class="playerinfo">
-                  <p class="playername">Ahmad Abuqamr</p>
-                  <p class="playerteam">AMB</p>
-               </div>
-               <div class="statbox">
-                  <p class="stat">23.7</p>
-               </div>
-            </div>
-            <div class="playerbox">
-               <img class="playerimage" src="{% static '../media/images/pimage.png' %}">
-               <div class="playerinfo">
-                  <p class="playername">Ahmad Abuqamr</p>
-                  <p class="playerteam">AMB</p>
-               </div>
-               <div class="statbox">
-                  <p class="stat">23.7</p>
-               </div>
-            </div>
-            <div class="playerbox">
-               <img class="playerimage" src="{% static '../media/images/pimage.png' %}">
-               <div class="playerinfo">
-                  <p class="playername">Ahmad Abuqamr</p>
-                  <p class="playerteam">AMB</p>
-               </div>
-               <div class="statbox">
-                  <p class="stat">23.7</p>
-               </div>
-            </div>
-            <div class="playerbox">
-               <img class="playerimage" src="{% static '../media/images/pimage.png' %}">
-               <div class="playerinfo">
-                  <p class="playername">Ahmad Abuqamr</p>
-                  <p class="playerteam">AMB</p>
-               </div>
-               <div class="statbox">
-                  <p class="stat">23.7</p>
-               </div>
-            </div>
-         </div>
+            {% endfor %}
+        </div>
          <div class="statsbox" onclick="document.location='allstats'">
             <p class="title">3PT Leaders</p>
+            {% for Player in three_pointers_leaders|slice:":5" %}  
             <div class="playerbox">
-               <img class="playerimage" src="{% static '../media/images/pimage.png' %}">
-               <div class="playerinfo">
-                  <p class="playername">Ahmad Abuqamr</p>
-                  <p class="playerteam">AMB</p>
-               </div>
-               <div class="statbox">
-                  <p class="stat">23.7</p>
-               </div>
+                <img class="playerimage" src="{{ Player.player_image.url }}" alt="{{ Player.player_fname }} {{ Player.player_lname }}">
+                <div class="playerinfo">
+                    <p class="playername">{{ Player.player_fname }} {{ Player.player_lname }}</p>
+                    <p class="playerteam">{{ Player.team_id.team_abbreviation }}</p>
+                </div>
+                <div class="statbox">
+                    <p class="stat">{{ Player.three_pointers }}</p>
+                </div>
             </div>
-            <div class="playerbox">
-               <img class="playerimage" src="{% static '../media/images/pimage.png' %}">
-               <div class="playerinfo">
-                  <p class="playername">Ahmad Abuqamr</p>
-                  <p class="playerteam">AMB</p>
-               </div>
-               <div class="statbox">
-                  <p class="stat">23.7</p>
-               </div>
-            </div>
-            <div class="playerbox">
-               <img class="playerimage" src="{% static '../media/images/pimage.png' %}">
-               <div class="playerinfo">
-                  <p class="playername">Ahmad Abuqamr</p>
-                  <p class="playerteam">AMB</p>
-               </div>
-               <div class="statbox">
-                  <p class="stat">23.7</p>
-               </div>
-            </div>
-            <div class="playerbox">
-               <img class="playerimage" src="{% static '../media/images/pimage.png' %}">
-               <div class="playerinfo">
-                  <p class="playername">Ahmad Abuqamr</p>
-                  <p class="playerteam">AMB</p>
-               </div>
-               <div class="statbox">
-                  <p class="stat">23.7</p>
-               </div>
-            </div>
-            <div class="playerbox">
-               <img class="playerimage" src="{% static '../media/images/pimage.png' %}">
-               <div class="playerinfo">
-                  <p class="playername">Ahmad Abuqamr</p>
-                  <p class="playerteam">AMB</p>
-               </div>
-               <div class="statbox">
-                  <p class="stat">23.7</p>
-               </div>
-            </div>
-         </div>
-      </div>
+            {% endfor %}
+        </div>
    </body>
    <footer>
       <div class="footer">

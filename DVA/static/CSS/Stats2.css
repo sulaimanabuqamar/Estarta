@@ -32,6 +32,7 @@ td {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    width: 20px;
 }
 
 .stat {
@@ -51,7 +52,6 @@ td {
 
 .name {
     height: 41px;
-    width: 61px;
     flex-direction: column;
     justify-content: left;
     flex-shrink: 0; 

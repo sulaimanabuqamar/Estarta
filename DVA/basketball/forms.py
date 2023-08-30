@@ -23,3 +23,18 @@ class PlayerForm(forms.ModelForm):
     class Meta:
         model = Player
         fields = ['player_fname','player_lname', 'player_age', 'player_number', 'player_email', 'player_image']
+        
+
+class PlayerBoxscore(forms.ModelForm):
+    field_goals = forms.IntegerField()
+    field_goals_percentage = forms.FloatField()
+    three_pointers = forms.IntegerField()
+    three_pointers_percentage = forms.FloatField()
+    free_throws = forms.IntegerField()
+    free_throws_percentage = forms.FloatField()
+    rebounds = forms.IntegerField()
+    assists = forms.IntegerField()
+    steals = forms.IntegerField()
+    blocks = forms.IntegerField()
+    turnovers = forms.IntegerField()
+    points = forms.IntegerField()

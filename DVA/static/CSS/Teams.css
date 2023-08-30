@@ -31,7 +31,9 @@ td {
 }
 
 .mw {
-    width: 50px;
+    width: 35px;
+    height: 35px;
+    margin: 5px 5px 0px 0px;
     text-align: center;
 } 
 

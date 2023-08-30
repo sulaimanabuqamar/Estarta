@@ -43,12 +43,12 @@
 }
 
 .playerinfo {
+    width: 150px;
     text-align: left;
 }
 
 .playername {
     color: #233754;
-    text-align: center;
     font-size: 14px;
     font-family: 'Inter';
     font-style: normal;
