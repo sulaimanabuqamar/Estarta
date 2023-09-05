@@ -1,8 +1,11 @@
 from django.shortcuts import redirect, render
-from django.http import HttpResponse
 from .forms import PlayerForm, TeamForm
+from django.contrib import messages
 from .models import *
 from django.contrib.auth.decorators import login_required
+from .decorators import custom_login_required
+from django.db.models import F
+import calendar
 
 # Create your views here.
 
@@ -13,6 +16,14 @@ def schedule(request):
     model_data = Game.objects.all()
     months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
     return render(request, "Schedule.html", {'schedule': model_data, 'months': months})
+
+@custom_login_required
+def adminSchedule(request):
+    score_keeper = ScoreKeeper.objects.get(keeper_id=request.session['score_keeper_id'])
+    model_data = Game.objects.filter(scorekeeper=score_keeper)
+    months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+    return render(request, "Schedule.html", {'schedule': model_data, 'months': months})
+
 
 def teams(request):
     model_data = Team.objects.all()
@@ -25,6 +36,7 @@ def stats(request):
     block_leaders = Player.objects.order_by('-blocks')[:5]
     steal_leaders = Player.objects.order_by('-steals')[:5]
     three_pointers_leaders = Player.objects.order_by('-three_pointers')[:5] 
+    
     
     context = {
         'point_leaders': point_leaders,
@@ -71,11 +83,41 @@ def register(request):
 def about(request):
     return render(request, "About.html")
 
+def privacy(request):
+    return render(request, "Privacy.html")
+
+def terms(request):
+    return render(request, "Terms.html")
+
+def FAQs(request):
+    return render(request, "FAQs.html")
+
 def boxScore(request, game_id):
     game = Game.objects.get(pk=game_id)
     
-    team1_players = Player.objects.filter(team_id=game.team_1_id)
-    team2_players = Player.objects.filter(team_id=game.team_2_id)
+    team1_players = Player.objects.filter(team_id=game.team_1_id).annotate(
+        playerperformance__field_goals=F('playerperformance__field_goals'),
+        playerperformance__three_pointers=F('playerperformance__three_pointers'),
+        playerperformance__free_throws=F('playerperformance__free_throws'),
+        playerperformance__rebounds=F('playerperformance__rebounds'),
+        playerperformance__assists=F('playerperformance__assists'),
+        playerperformance__steals=F('playerperformance__steals'),
+        playerperformance__blocks=F('playerperformance__blocks'),
+        playerperformance__turnovers=F('playerperformance__turnovers'),
+        playerperformance__points=F('playerperformance__points'),
+    )
+    
+    team2_players = Player.objects.filter(team_id=game.team_2_id).annotate(
+        playerperformance__field_goals=F('playerperformance__field_goals'),
+        playerperformance__three_pointers=F('playerperformance__three_pointers'),
+        playerperformance__free_throws=F('playerperformance__free_throws'),
+        playerperformance__rebounds=F('playerperformance__rebounds'),
+        playerperformance__assists=F('playerperformance__assists'),
+        playerperformance__steals=F('playerperformance__steals'),
+        playerperformance__blocks=F('playerperformance__blocks'),
+        playerperformance__turnovers=F('playerperformance__turnovers'),
+        playerperformance__points=F('playerperformance__points'),
+    )
     
     context = {
         'team1_players': team1_players,
@@ -85,6 +127,42 @@ def boxScore(request, game_id):
     }
     
     return render(request, "Boxscore.html", context)
+
+@custom_login_required
+def adminBoxScore(request, game_id):
+    game = Game.objects.get(pk=game_id)
+    
+    team1_players = Player.objects.filter(team_id=game.team_1_id).annotate(
+        playerperformance__field_goals=F('playerperformance__field_goals'),
+        playerperformance__three_pointers=F('playerperformance__three_pointers'),
+        playerperformance__free_throws=F('playerperformance__free_throws'),
+        playerperformance__rebounds=F('playerperformance__rebounds'),
+        playerperformance__assists=F('playerperformance__assists'),
+        playerperformance__steals=F('playerperformance__steals'),
+        playerperformance__blocks=F('playerperformance__blocks'),
+        playerperformance__turnovers=F('playerperformance__turnovers'),
+        playerperformance__points=F('playerperformance__points'),
+    )
+    
+    team2_players = Player.objects.filter(team_id=game.team_2_id).annotate(
+        playerperformance__field_goals=F('playerperformance__field_goals'),
+        playerperformance__three_pointers=F('playerperformance__three_pointers'),
+        playerperformance__free_throws=F('playerperformance__free_throws'),
+        playerperformance__rebounds=F('playerperformance__rebounds'),
+        playerperformance__assists=F('playerperformance__assists'),
+        playerperformance__steals=F('playerperformance__steals'),
+        playerperformance__blocks=F('playerperformance__blocks'),
+        playerperformance__turnovers=F('playerperformance__turnovers'),
+        playerperformance__points=F('playerperformance__points'),
+    )
+    
+    context = {
+        'team1_players': team1_players,
+        'team2_players': team2_players,
+        'team1_name': game.team_1_id.team_name,
+        'team2_name': game.team_2_id.team_name,
+    }
+    return render(request, "AdminBoxscore.html", context)
 
 # def savePlayerStats(request, game_id):
 #     game = Game.objects.get(pk=game_id)
@@ -110,7 +188,22 @@ def boxScore(request, game_id):
 
 
 def allStats(request):
-    return render(request, "AllStats.html")
+    players = Player.objects.all()
+    return render(request, "AllStats.html", {'players': players})
 
 def login(request):
-    return render(request, "Login.html")
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
+        try:
+            score_keeper = ScoreKeeper.objects.get(keeper_username=username)
+            if score_keeper.keeper_password == password:
+                request.session['score_keeper_id'] = score_keeper.keeper_id
+                return redirect('adminSchedule')
+            else:
+                messages.error(request, "Invalid login credentials. Please try again.")
+        except ScoreKeeper.DoesNotExist:
+            messages.error(request, "User does not exist.")
+
+    return render(request, 'Login.html')

@@ -151,6 +151,7 @@ body {
 }
 
 .footertext {
+    text-decoration: none;
     color: #FFF;
     font-size: 14px;
     font-family: 'Roboto_Regular', sans-serif;

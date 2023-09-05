@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="{% static 'CSS/Common.css' %}">
+      <link rel="stylesheet" href="{% static 'CSS/About.css' %}">
+      <title>Schedule</title>
+      <div class="header">
+         <div style="margin-right: 60px;">
+            <a class="headertext" href="{% url 'schedule' %}">SCHEDULE</a>
+            <div class="headerdivider"></div>
+            <a class="headertext" href="{% url 'teams' %}">TEAMS</a>
+            <div class="headerdivider"></div>
+            <a class="headertext" href="{% url 'stats' %}">STATS</a>
+            <div class="headerdivider"></div>
+            <a class="headertext" href="{% url 'register' %}">REGISTER</a>
+            <div class="headerdivider"></div>
+            <a class="headertext" href="{% url 'about' %}">ABOUT</a>
+         </div>
+      </div>
+   </head>
+   <body>
+      <div class="heading">
+         <p class="titlefont">Privacy Policy</p>
+      </div>
+      <br><br><br><br>
+      <p class="text">
+         Thank you for choosing to participate in Varsity Association. We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy outlines how we collect, use, disclose, and protect your information when you engage with our basketball league activities, services, and platforms.<br><br>
+         By participating in the League's activities, you consent to the practices described in this Privacy Policy. If you do not agree with this Privacy Policy, please refrain from using our services and engaging in League activities.
+      </p>
+      <h2 class="subtitle">Information We Collect</h2>
+      <p class="text">
+         We may collect and process the following types of information:
+      <p class="bold-text">Personal Information:</p>
+      <p class="text">This includes your name, contact information (email address, phone number), and any other
+         information you provide during registration or while engaging in League activities.
+      </p>
+      <p class="bold-text">Player and Team Information:</p>
+      <p class="text">We may collect information about players, coaches, and teams participating in the League,
+         such as player profiles, team rosters, and performance statistics.
+      </p>
+      <p class="bold-text">Payment Information:</p>
+      <p class="text">If applicable, we may collect payment information for registration fees or other
+         League-related transactions. However, we do not store complete payment card details; these are securely
+         processed by our payment processors.
+      </p>
+      <h2 class="subtitle">
+         How We Use Your Information 
+      </h2>
+      <p class="text">We use the collected information for the following purposes:
+      </p>
+      <p class="bold-text">League Operations:</p>
+      <p class="text">To manage and administer the League, including team assignments, scheduling, and communication with participants.</p>
+      <p class="bold-text">Communication:</p>
+      <p class="text">To send important updates, announcements, and information related to League activities.</p>
+      <p class="bold-text">Analytics:</p>
+      <p class="text">To analyze usage patterns, improve our services, and make informed decisions for the betterment of the League.</p>
+      <p class="bold-text">Payment Processing:</p>
+      <p class="text">If applicable, to process payments for registration fees and other League-related transactions.</p>
+      <p class="bold-text">Payment Processing:</p>
+      <p class="text">To comply with legal obligations and respond to legal requests from authorities.</p>
+      </p>
+      <h2 class="subtitle">
+        Disclosure of Your Information
+    </h2>
+     <p class="text">We may share your information under the following circumstances:
+     </p>
+     <p class="bold-text">Service Providers</p>
+     <p class="text">We may engage trusted third-party service providers to assist in League operations and services. These providers are obligated to maintain the confidentiality of your information.</p>
+     <p class="bold-text">Legal Requirements:</p>
+     <p class="text">We may disclose your information in response to a subpoena, court order, or other legal process.</p>
+     <p class="bold-text">Legal Requirements:</p>
+     <p class="text">We may share information to protect our rights, privacy, safety, or property, as well as that of our participants and partners.</p>
+     </p>
+     <h2 class="subtitle">
+        Data Security
+    </h2>
+     <p class="text">We implement reasonable security measures to protect your personal information from unauthorized access, disclosure, alteration, or destruction. However, no data transmission over the internet or electronic storage method is 100% secure, so we cannot guarantee absolute security.
+     </p>
+     <h2 class="subtitle">
+        Your Choices
+    </h2>
+     <p class="text">We implement reasonable security measures to protect your personal information from unauthorized access, disclosure, alteration, or destruction. However, no data transmission over the internet or electronic storage method is 100% secure, so we cannot guarantee absolute security.
+     </p>
+     <h2 class="subtitle">
+        Updates to Privacy Policy
+    </h2>
+     <p class="text">We implement reasonable security measures to protect your personal information from unauthorized access, disclosure, alteration, or destruction. However, no data transmission over the internet or electronic storage method is 100% secure, so we cannot guarantee absolute security.
+     </p>
+     <h2 class="subtitle">
+        Contact Us
+    </h2>
+     <p class="text">If you have any questions, concerns, or requests regarding this Privacy Policy, please contact us at [insert contact details]. <br>
+
+        By participating in the League's activities, you acknowledge that you have read and understood this Privacy Policy and agree to its terms.
+     </p>
+   </body>
+   <footer>
+      <div class="footer">
+         <div class="About">
+            <img class="logo" src="{% static '../media/images/Logo.png'%}" alt="DVA Logo">
+            <h2 class="footertitle">Dubai Varsity Association</h2>
+            <p class="footerabout">Fostering sports excellence in schools through dedicated leagues for volleyball, basketball, and football.</p>
+         </div>
+         <div class="Leagues">
+            <h4 class="footersubtitle">Leagues</h4>
+            <a class="footertext" href="{% url 'home' %}">Football</a><br><br>
+            <a class="footertext" href="{% url 'home' %}">Volleyball</a><br><br>
+            <a class="footertext" href="{% url 'schedule' %}">Basketball</a>
+         </div>
+         <div class="Legal">
+            <h4 class="footersubtitle">Legal</h4>
+            <a class="footertext" href="{% url 'terms' %}">Terms</a><br><br>
+            <a class="footertext" href="{% url 'privacy' %}">Privacy</a><br><br>
+            <a class="footertext" href="{% url 'register' %}">Register</a>
+         </div>
+         <div class="Company">
+            <h4 class="footersubtitle">Company</h4>
+            <a class="footertext" href="{% url 'about' %}">About Us</a><br><br>
+            <a class="footertext" href="{% url 'home' %}">Careers</a><br><br>
+            <a class="footertext" href="{% url 'FAQs' %}">FAQs</a><br><br>
+            <a class="footertext" href="{% url 'login' %}">Admin</a>
+         </div>
+         <div class="Contact">
+            <h4 class="footersubtitle">Contact Us</h4>
+            <div class="Contactinner">
+               <img class="icon" src="{% static '../media/images/icon.png'%}" alt="Location">
+               <p class="footertext">Wisconsin Ave, Suite 700 Chevy Chase, Maryland</p>
+            </div>
+            <h4 class="footersubtitle">Follow Us</h4>
+            <div class="Followinner">
+               <img class="icon" src="{% static '../media/images/social-1.png'%}" alt="Location">
+               <img class="icon" src="{% static '../media/images/social-2.png'%}" alt="Location">
+               <img class="icon" src="{% static '../media/images/social-3.png'%}" alt="Location">
+               <img class="icon" src="{% static '../media/images/social.png'%}" alt="Location">
+            </div>
+         </div>
+      </div>
+   </footer>
+</html>

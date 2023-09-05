@@ -13,9 +13,12 @@
     <div class="login">
         <p class="company">Dubai Varsity Association</p>
         <p class="title">Staff Login</p>
-        <input type="username" id="username" name="username" class="form" placeholder="   Username" required>
-        <input type="password" id="password" name="password" class="form" placeholder="   Password" required>
-        <input type="submit" id="submit" name="submit" class="button">  
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <input type="text" id="username" name="username" class="form" placeholder="   Username" required>
+            <input type="password" id="password" name="password" class="form" placeholder="   Password" required>
+            <input type="submit" id="submit" name="submit" class="button" value="Login">
+        </form>
     </div>
 </body>
 </html>

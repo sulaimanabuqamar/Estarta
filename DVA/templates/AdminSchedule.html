@@ -33,9 +33,9 @@
          <div class="schedule">
             {% for Game in schedule %}
             {% if Game.game_date.month == 1 %}
-               <div class="game" onclick="window.location.href='{% url 'boxscore' game_id=Game.game_id %}'">
+               <div class="game" onclick="window.location.href='{% url 'AdminBoxscore' game_id=Game.game_id %}'">
                <div class="left">
-                  <td><img class="mw" src="{{Game.team_1_id.logo.url}}" alt="{{ Game.team_1_id.team_abbreviation }} Logo"></td>
+                  <img class="teamlogo">{{Game.team_1_id.logo}}
                   <p class="team">{{Game.team_1_id.team_abbreviation}}</p>
                </div>
                <div class="middle">
@@ -55,7 +55,7 @@
                <p class="vs">VS</p>
             </div>
             <div class="right">
-               <td><img class="mw" src="{{Game.team_2_id.logo}}" alt="{{ Game.team_2_id.team_abbreviation }} Logo"></td>
+               <img class="teamlogo"></img>
                <p class="team">{{Game.team_2_id.team_abbreviation}}</p>
             </div>
          </div>
